@@ -1,0 +1,41 @@
+img{ /*Размеры изображения*/
+    /*Размеры изображений высчитываются относительно видимой части экрана*/
+    height: auto; 
+    width: 100%; 
+}
+
+li {
+    list-style-type: none; /*Выключение маркеров */
+    padding: 8px; /*Разрывы между "строками"*/
+    border: 1px solid #ccc;
+    position: relative; 
+}
+
+ul {
+    display:flex; /*Выравнивание по горизонтали*/
+    /*align-content: center; /*Выравнивание списка по центру*/
+    margin: 0;
+    padding: 0; 
+    top: 0;
+    
+}
+
+@media only screen and (max-width: 500px){
+    ul {
+        flex-wrap: wrap;
+    }
+}
+
+*{
+    margin: 0;
+}
+
+h1{
+    font-family: "Courier New", sans-serif;
+    text-align: center;
+}
+
+a:link{
+    text-decoration: none;
+    color: black;
+}
