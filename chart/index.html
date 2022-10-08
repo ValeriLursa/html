@@ -3,12 +3,25 @@
 <head>
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=<device-width>, initial-scale=1.0">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Diagram</title>
 </head>
 <body>
-    <script>
-        
-    </script>
+    <div class="container">
+        <canvas id="myChart" width="600" height="400"></canvas>
+   </div>
+   <script>
+        const canvas = document.getElementById('myChart');
+        if (canvas.getContext) {
+            const ctx = canvas.getContext('2d');
+        const radius = 100;
+        const startAngle = Math.PI;
+        const counterclockwise = false; // clockwise or counterclockwise
+        const endAngle = Math.PI/4; // End point on circle
+        ctx.arc(150, 150, radius, startAngle, endAngle, counterclockwise);
+        ctx.fill();
+        //ctx.stroke();
+  }
+   </script>
 </body>
 </html>
