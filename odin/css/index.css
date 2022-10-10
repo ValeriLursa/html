@@ -8,7 +8,7 @@ li {
     list-style-type: none; /*Выключение маркеров */
     padding: 8px; /*Разрывы между "строками"*/
     border: 1px solid #ccc;
-    position: relative; 
+    position: relative;  
 }
 
 ul {
@@ -16,8 +16,7 @@ ul {
     /*align-content: center; /*Выравнивание списка по центру*/
     margin: 0;
     padding: 0; 
-    top: 0;
-    
+    top: 0; 
 }
 
 @media only screen and (max-width: 500px){
@@ -32,6 +31,7 @@ ul {
 
 *{
     margin: 0;
+    box-sizing: border-box;
 }
 
 h1{
@@ -39,7 +39,16 @@ h1{
     text-align: center;
 }
 
+a{
+    display:flex;
+    justify-content: space-between;
+    align-items: center;
+    flex-direction: column;
+    height: 100%;
+}
+
 a:link{
     text-decoration: none;
     color: black;
 }
+
