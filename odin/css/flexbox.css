@@ -1,0 +1,115 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-size: large;
+  }
+  
+.menu-container {
+color: #fff;
+background-color: #5995DA;  /* Blue */
+padding: 20px 0;
+display: flex; /*Все элементы блока должны отображаться с помощью flexbox вместо модели блока по-умолчанию*/
+justify-content: center; /*Горизонтальное выравнивание всех элементов
+Другие значения:
+1. center
+2. flex-start - выравнивание от левого края
+3. flex-end - выравнивание от правого края
+*/
+}
+
+.menu {
+border: 1px solid #fff;  /* For debugging */
+width: 900px;
+display: flex;
+justify-content: space-between;
+/*
+Распределение flex-элементов
+Если несколько flex-элементов в контейнере:
+1. space-around - распределение всех элементов по всей ширине контейнера
+2. space-between - крайние элементы прижмутся к бокам контейнера*/
+}
+
+.links {
+/*border: 1px solid #fff;   For debugging */
+display: flex;
+justify-content: flex-end;
+}
+
+.login {
+margin-left: 20px;
+}
+
+.header-container {
+color: #5995DA;
+background-color: #D6E9FE;
+display: flex;
+justify-content: center;
+}
+  
+.header {
+width: 900px;
+height: 300px;
+display: flex;
+justify-content: space-between;
+align-items: center; /*Выравнивание по центру по вертикали контейнера
+Доп значения:
+1. center
+2. flex-start - Вверху контейнера
+3. flex-end - внизу контейнера
+4. stretch - растяжение элемента по всей высоте контейнера
+5. baseline - выравнивание по нижнему краю самого высокого элемента*/
+}
+
+/* .social,
+.logo,
+.subscribe {
+  border: 1px solid #5995DA;
+} */
+/*Выравнивание отдельных элементов в контейнере по нижней границе контейнера,
+переопределеяет значние align-items в контейнере.
+Имеет аналогичные значения что и у align-items*/
+.social,
+.subscribe {
+  align-self: flex-end;
+  margin-bottom: 20px;
+}
+
+.photo-grid-container {
+    display: flex;
+    justify-content: center;
+  }
+  
+.photo-grid {
+    width: 900px;
+    display: flex;
+    justify-content: flex-start;
+    flex-wrap: wrap; /*При выходе элемента за границу видимости экрана,
+     производится его перенос на следующую строку*/
+    justify-content: center; /*Выраваниевание элементов по центру по горизонтали*/
+    flex-direction: row; 
+    /* Доп значения:display: 
+    1. column - Выравнивание всех элементов в столбик вместо сетки
+    2. row-reverse - каждая строка отображается справа налево
+    3. row - выраванивание всех элментов в строку вместо сетки
+    4. column-reverse - Выравнивание всех элементов в столбик вместо сетки,
+    начиная с последнего элемента*/
+    align-items: center; /*Выравнивание столбца элементов по центру по горизонтали*/
+}
+
+.photo-grid-item {
+    border: 1px solid #fff;
+    width: 300px;
+    height: 300px;
+}
+
+/*Изменение порядка вывода элементов даже если они появляются на разных строках*/
+.first-item {
+    order: 1; 
+  }
+  
+.last-item {
+    order: -1;
+}
+/*---*/
+
