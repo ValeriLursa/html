@@ -1,0 +1,63 @@
+/*Стили css для "головы" страницы*/
+*{
+
+    margin: 0;
+}
+
+.head{
+    background-color: #1F2937;
+    display: flex;
+    flex-direction: column;
+}
+
+a{
+    text-decoration: none; /*убирает подчеркивание у всех ссылок*/
+}
+
+.color_white{
+    color: #F9FAF8;
+}
+
+.header_logo_text{
+    font-size: 24px;
+    font-weight: bold;
+}
+
+.header_link_text{
+    font-size: 18px;
+    color: #E5E7EB;
+}
+
+.margin_left_20px{
+    margin-left: 20px;
+}
+
+.header_main_text{
+    font-size: 48px;
+}
+
+button{
+    border-radius: 7px;
+    width: 115px;
+    height: 30px;
+    background-color: #3882F6;
+    border: 0px;
+    color: white;
+    margin-top: 10px;
+}
+
+.placeholder{
+    width: auto;
+    height: 100px;
+}
+
+/*flex-контейнеры*/
+.menu, .header{
+    display: flex;
+    justify-content: space-around;
+    padding: 20px 0;
+}
+
+.header{
+    margin: 150px;
+}
