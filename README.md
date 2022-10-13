@@ -5,9 +5,11 @@
 Использумые технологии: html
 
 <h3>Menu</h3>
-<a href="https://valerilursa.github.io/html/odin/recipes_project/index.html">Book of recipes</a>
-<a href="https://valerilursa.github.io/html/odin/flexbox_project/flexbox.html">Flexbox Page</a>
-<a href="https://valerilursa.github.io/html/odin/Landing_Page_project/index.html">Landing Page</a>
+<ul>
+  <li><a href="https://valerilursa.github.io/html/odin/recipes_project/index.html">Book of recipes</a></li>
+  <li><a href="https://valerilursa.github.io/html/odin/flexbox_project/flexbox.html">Flexbox Page</a></li>
+  <li><a href="https://valerilursa.github.io/html/odin/Landing_Page_project/index.html">Landing Page</a></li>
+ </ul>
 
 <h2>Chart</h2>
 <h3>Верстка круговой диаграммы</h3>
