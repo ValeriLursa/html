@@ -38,20 +38,22 @@ function round(playerSelection, computerSelection) {
 function checkAnswerFromPlayer(answer) {
     let newAnswer = answer.toLowerCase();
     let belonging = arrayChoice.indexOf(newAnswer) != -1;
-    return belonging;
+    return [belonging, newAnswer];
 }
 
-//игра из 5 раундов
-function game() {
-    const amountRounds = 5; //количество раундов
+//игра из заданного извне количества раундов
+function game(amountRounds) {
     const messageToPlayer = "Введите свой вариант: ";
     for (let i = 0; i < amountRounds; i++) {
         let answerFromPlayer = prompt(messageToPlayer);
-        if (!checkAnswerFromPlayer(answerFromPlayer)) {
+        let resultCheckAnswerFromPlayer = checkAnswerFromPlayer(answerFromPlayer);
+        if (!resultCheckAnswerFromPlayer[0]) {
             i--;
             console.log("Такой вариант не рассматривается!");
         }
-        else round(answerFromPlayer, getComputerChoice(arrayChoice));
+        else {
+            console.log(round(resultCheckAnswerFromPlayer[1], getComputerChoice(arrayChoice)));
+        }
     }
 }
 
@@ -85,8 +87,16 @@ function messageForTestCheckAnswerFromPlayer(bool) {
 
 //проверка функции checkAnswerFromPlayer
 function testCheckAnswerFromPlayer() {
-    console.log(messageForTestCheckAnswerFromPlayer(true) + checkAnswerFromPlayer("Rock"));
-    console.log(messageForTestCheckAnswerFromPlayer(true) + checkAnswerFromPlayer("RoCk"));
-    console.log(messageForTestCheckAnswerFromPlayer(false) + checkAnswerFromPlayer("RoCks"));
+    console.log(messageForTestCheckAnswerFromPlayer(true) + checkAnswerFromPlayer("Rock")[0]);
+    console.log(messageForTestCheckAnswerFromPlayer(true) + checkAnswerFromPlayer("RoCk")[0]);
+    console.log(messageForTestCheckAnswerFromPlayer(false) + checkAnswerFromPlayer("RoCks")[0]);
+}
+// testCheckAnswerFromPlayer()
+
+//проверка функции game для одного раунда
+function testGame() {
+    var amountRounds = 2;
+    game(amountRounds);
 }
 
+testGame();
