@@ -1,4 +1,4 @@
-var arrayChoice = ["Rock", "Paper", "Scissors"];
+var arrayChoice = ["rock", "paper", "scissors"];
 /*
 Камень > Ножницы
 Ножницы > Бумага
@@ -24,12 +24,12 @@ function round(playerSelection, computerSelection) {
     var resultDraw = `Draw! ${playerSelection}`;
     var q = playerSelection + computerSelection;
     switch (q) {
-        case "RockScissors":
-        case "ScissorsPaper":
-        case "PaperRock": return resultWin;
-        case "RockRock":
-        case "ScissorsScissors":
-        case "PaperPaper": return resultDraw;
+        case "rockscissors":
+        case "scissorspaper":
+        case "paperrock": return resultWin;
+        case "rockrock":
+        case "scissorsscissors":
+        case "paperpaper": return resultDraw;
         default: return resultLose;
     }
 }
@@ -56,3 +56,4 @@ function testRoundArray() {
         }
     }
 }
+
