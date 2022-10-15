@@ -34,7 +34,7 @@ function round(playerSelection, computerSelection) {
     }
 }
 
-//проверка ввода пользователя
+//проверка ввода пользователя, приведение входной строки у нижнему регистру и проверка на значение строки
 function checkAnswerFromPlayer(answer) {
     let newAnswer = answer.toLowerCase();
     let belonging = arrayChoice.indexOf(newAnswer) != -1;
