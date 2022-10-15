@@ -34,6 +34,27 @@ function round(playerSelection, computerSelection) {
     }
 }
 
+//проверка ввода пользователя
+function checkAnswerFromPlayer(answer) {
+    let newAnswer = answer.toLowerCase();
+    let belonging = arrayChoice.indexOf(newAnswer) != -1;
+    return belonging;
+}
+
+//игра из 5 раундов
+function game() {
+    const amountRounds = 5; //количество раундов
+    const messageToPlayer = "Введите свой вариант: ";
+    for (let i = 0; i < amountRounds; i++) {
+        let answerFromPlayer = prompt(messageToPlayer);
+        if (!checkAnswerFromPlayer(answerFromPlayer)) {
+            i--;
+            console.log("Такой вариант не рассматривается!");
+        }
+        else round(answerFromPlayer, getComputerChoice(arrayChoice));
+    }
+}
+
 //--Testing--
 //проверка функции getComputerChoice
 function testGetComputerChoice() {
@@ -44,8 +65,8 @@ function testGetComputerChoice() {
 var playerSelection = "Rock";
 //проверка крайних значений
 function testRound() {
-    console.log(round("Rock", "Scissors"));
-    console.log(round("Scissors", "Rock"));
+    console.log(round("rock", "scissors"));
+    console.log(round("scissors", "rock"));
 }
 
 //проверка перебором
@@ -55,5 +76,17 @@ function testRoundArray() {
             console.log("Player: " + choice + " Computer: " + choice2 + " = " + round(choice, choice2));
         }
     }
+}
+
+//функция для вывода сообщения о результате тестирования функции checkAnswerFromPlayer
+function messageForTestCheckAnswerFromPlayer(bool) {
+    return `Должно вернуться ${bool}. Результат: `;
+};
+
+//проверка функции checkAnswerFromPlayer
+function testCheckAnswerFromPlayer() {
+    console.log(messageForTestCheckAnswerFromPlayer(true) + checkAnswerFromPlayer("Rock"));
+    console.log(messageForTestCheckAnswerFromPlayer(true) + checkAnswerFromPlayer("RoCk"));
+    console.log(messageForTestCheckAnswerFromPlayer(false) + checkAnswerFromPlayer("RoCks"));
 }
 
