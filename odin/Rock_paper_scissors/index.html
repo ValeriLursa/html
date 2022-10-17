@@ -1,19 +1,25 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="ru">
+
 <head>
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Rock paper scissors</title>
+    <link rel='stylesheet' href='rockPaperScissors.css' />
 </head>
+
 <body>
+    <h1>Rock paper scissors</h1>
+    <div id="theGameScore" class="theGameScore"></div>
     <div id="containerButter">
-        <button id="rock">Rock</button>
-        <button id="paper">Paper</button>
-        <button id="scissors">Scissors</button>
+        <button id="rock"><img class="img" src="./img/rock.jpg" /></button>
+        <button id="paper"><img class="img" src="./img/paper.png" /></button>
+        <button id="scissors"><img class="img" src="./img/scissors.jpg" /></button>
     </div>
-    <button id="restart">Restart</button>
     <div id="container"></div>
+    <button id="restart">Restart</button>
     <script src="rockPaperScissors.js"></script>
 </body>
+
 </html>
