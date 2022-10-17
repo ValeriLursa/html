@@ -9,6 +9,7 @@
   <li><a href="https://valerilursa.github.io/html/odin/recipes_project/index.html">Book of recipes</a></li>
   <li><a href="https://valerilursa.github.io/html/odin/flexbox_project/flexbox.html">Flexbox Page</a></li>
   <li><a href="https://valerilursa.github.io/html/odin/Landing_Page_project/index.html">Landing Page</a></li>
+  <li><a href="https://valerilursa.github.io/html/odin/Rock_paper_scissors/index.html">Rock paper scissors</a></li>
  </ul>
 
 <h2>Chart</h2>
