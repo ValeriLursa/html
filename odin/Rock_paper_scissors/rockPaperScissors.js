@@ -9,7 +9,7 @@ var arrayChoice = ["rock", "paper", "scissors"];
 const resultGame = [0, 0];
 
 //сокрытие кнопки рестарта
-let restart = document.getElementById("restart"); 
+let restart = document.getElementById("restart");
 restart.style.display = "none";
 
 /*Добавление функции к объекту Array,
@@ -126,10 +126,12 @@ theGameScore.textContent = `${resultGame[0]}:${resultGame[1]}`;
 const buttons = document.querySelectorAll('button');
 buttons.forEach((button) => {
     button.addEventListener('click', () => {
-        console.log(resultGame);
-        const resultRound = round(button.id, getComputerChoice(arrayChoice));
-        div.textContent = resultRound;
-        theGameScore.textContent = `${resultGame[0]}:${resultGame[1]}`;
+        if (resultGame[0] < 5 && resultGame[1] < 5) {
+            console.log(resultGame);
+            const resultRound = round(button.id, getComputerChoice(arrayChoice));
+            div.textContent = resultRound;
+            theGameScore.textContent = `${resultGame[0]}:${resultGame[1]}`;
+        }
         const message = `Счет ${resultGame[0]}:${resultGame[1]}. `;
         if (resultGame[0] == 5) {
             div.textContent = message + 'Вы выиграли!';
@@ -145,7 +147,7 @@ buttons.forEach((button) => {
 });
 
 //блокировка кнопок
-function block(){
+function block() {
     buttons.forEach((button) => {
         button.disabled = true;
     })
@@ -153,10 +155,10 @@ function block(){
 }
 
 //разблокировка кнопки рестарт и переопределение функции события для этой кнопки
-function restartButtonClick(){
+function restartButtonClick() {
     restart.style.display = "block";
     restart.disabled = false;
-    restart.addEventListener('click', ()=>{
+    restart.addEventListener('click', () => {
         window.location.reload();
     })
 }
