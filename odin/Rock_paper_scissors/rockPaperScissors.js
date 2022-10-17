@@ -118,11 +118,18 @@ const container = document.querySelector('#container');
 const div = document.createElement('div');
 container.appendChild(div);
 
+//объявление элемента div для вывода счет во время игры
+let theGameScore = document.querySelector('#theGameScore');
+theGameScore.textContent = `${resultGame[0]}:${resultGame[1]}`;
+
 //Добавление прослушивателей событий для кнопок
 const buttons = document.querySelectorAll('button');
 buttons.forEach((button) => {
     button.addEventListener('click', () => {
         console.log(resultGame);
+        const resultRound = round(button.id, getComputerChoice(arrayChoice));
+        div.textContent = resultRound;
+        theGameScore.textContent = `${resultGame[0]}:${resultGame[1]}`;
         const message = `Счет ${resultGame[0]}:${resultGame[1]}. `;
         if (resultGame[0] == 5) {
             div.textContent = message + 'Вы выиграли!';
@@ -134,8 +141,6 @@ buttons.forEach((button) => {
             block();
             return;
         }
-        const resultRound = round(button.id, getComputerChoice(arrayChoice));
-        div.textContent = resultRound;
     })
 });
 
@@ -145,13 +150,6 @@ function block(){
         button.disabled = true;
     })
     restartButtonClick();
-}
-
-//разблокировка кнопок
-function noblock(){
-    buttons.forEach((button) => {
-        button.disabled = false;
-    })
 }
 
 //разблокировка кнопки рестарт и переопределение функции события для этой кнопки
