@@ -5,6 +5,13 @@ var arrayChoice = ["rock", "paper", "scissors"];
 Бумага > Камень
 */
 
+//подсчет очков игры
+const resultGame = [0, 0];
+
+//сокрытие кнопки рестарта
+let restart = document.getElementById("restart"); 
+restart.style.display = "none";
+
 /*Добавление функции к объекту Array,
 которая случайным образом выбирает число от 0 до длины массива
 и возвращает элемент массива со случайным индексом*/
@@ -26,11 +33,18 @@ function round(playerSelection, computerSelection) {
     switch (q) {
         case "rockscissors":
         case "scissorspaper":
-        case "paperrock": return resultWin;
+        case "paperrock":
+            {
+                resultGame[0]++;
+                return resultWin;
+            }
         case "rockrock":
         case "scissorsscissors":
         case "paperpaper": return resultDraw;
-        default: return resultLose;
+        default: {
+            resultGame[1]++;
+            return resultLose;
+        }
     }
 }
 
@@ -99,4 +113,54 @@ function testGame() {
     game(amountRounds);
 }
 
-testGame();
+//добавление элемента div для вывода результата
+const container = document.querySelector('#container');
+const div = document.createElement('div');
+container.appendChild(div);
+
+//Добавление прослушивателей событий для кнопок
+const buttons = document.querySelectorAll('button');
+buttons.forEach((button) => {
+    button.addEventListener('click', () => {
+        console.log(resultGame);
+        const message = `Счет ${resultGame[0]}:${resultGame[1]}. `;
+        if (resultGame[0] == 5) {
+            div.textContent = message + 'Вы выиграли!';
+            block();
+            return;
+        }
+        if (resultGame[1] == 5) {
+            div.textContent = message + 'Вы проиграли!';
+            block();
+            return;
+        }
+        const resultRound = round(button.id, getComputerChoice(arrayChoice));
+        div.textContent = resultRound;
+    })
+});
+
+//блокировка кнопок
+function block(){
+    buttons.forEach((button) => {
+        button.disabled = true;
+    })
+    restartButtonClick();
+}
+
+//разблокировка кнопок
+function noblock(){
+    buttons.forEach((button) => {
+        button.disabled = false;
+    })
+}
+
+//разблокировка кнопки рестарт и переопределение функции события для этой кнопки
+function restartButtonClick(){
+    restart.style.display = "block";
+    restart.disabled = false;
+    restart.addEventListener('click', ()=>{
+        window.location.reload();
+    })
+}
+
+//testGame();
