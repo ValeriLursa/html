@@ -8,7 +8,7 @@ a,
 a:link,
 a:visited,
 a:hover,
-a:active{
+a:active {
     text-decoration: none;
 }
 
@@ -29,36 +29,41 @@ a:active{
     font-weight: 400;
 }
 
-.rectangleHead{
-    
+.rectangleHead {
+
     display: flex;
-    justify-content:  space-between;
+    justify-content: space-between;
     flex-direction: column;
     padding: 10px 10px;
 }
 
-.rectangle{
-    
+.rectangle {
+
     display: flex;
-    justify-content:  space-between;
+    justify-content: space-between;
     flex-direction: column;
     padding: 10px 10px;
 }
 
-.rectangle:hover{
+.rectangle:hover {
     border: 1px solid #FFF;
 }
 
 .rectangleTitle {
     font-size: 40px;
-    line-height: 130%;
+    line-height: 150%;
     width: 100%;
-    padding: 0px 0px ;
+    padding: 0px 0px;
 }
 
 .rectangleText {
-    font-size: 13px;
+    font-size: 17px;
     line-height: 16px;
     padding: 10px 0px;
 }
 
+a.noActive {
+    pointer-events: none;
+    /* делаем элемент неактивным для взаимодействия */
+    cursor: default;
+}
