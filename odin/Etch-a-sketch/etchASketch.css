@@ -24,16 +24,27 @@ h1 {
     flex-wrap: wrap;
 }
 
-#promptButton{
+button{
     width: 150px;
     height: 70px;
     font-size: 20px;
+    margin-bottom: 10px;
 }
 
 .square{
-    border: 1px solid #000;
+    border: 0px;
 }
 
 .square:hover{
     background-color: antiquewhite;
+}
+
+.button{
+    display: flex;
+    flex-direction: column;
+
+}
+
+.border{
+    border: 1px solid #000;
 }
