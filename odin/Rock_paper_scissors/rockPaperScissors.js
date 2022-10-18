@@ -122,29 +122,61 @@ container.appendChild(div);
 let theGameScore = document.querySelector('#theGameScore');
 theGameScore.textContent = `${resultGame[0]}:${resultGame[1]}`;
 
+//объявление элемента img для вывода хода компьютера
+const selectorComputerSelection = document.querySelector('#computerSelection');
+const imgComputerSelection = document.createElement('img');
+selectorComputerSelection.appendChild(imgComputerSelection);
+
 //Добавление прослушивателей событий для кнопок
 const buttons = document.querySelectorAll('button');
 buttons.forEach((button) => {
     button.addEventListener('click', () => {
         if (resultGame[0] < 5 && resultGame[1] < 5) {
             console.log(resultGame);
-            const resultRound = round(button.id, getComputerChoice(arrayChoice));
+            let computerSelection = getComputerChoice(arrayChoice);
+            const resultRound = round(button.id, computerSelection);
+            imgComputerSelection.setAttribute('class', "img");
+            selectImgComputerSelection(computerSelection);
             div.textContent = resultRound;
             theGameScore.textContent = `${resultGame[0]}:${resultGame[1]}`;
         }
-        const message = `Счет ${resultGame[0]}:${resultGame[1]}. `;
         if (resultGame[0] == 5) {
-            div.textContent = message + 'Вы выиграли!';
+            div.textContent = returnResult() + 'Вы выиграли!';
             block();
             return;
         }
         if (resultGame[1] == 5) {
-            div.textContent = message + 'Вы проиграли!';
+            div.textContent = returnResult() + 'Вы проиграли!';
             block();
             return;
         }
     })
 });
+
+function returnResult() {
+    const message = `Счет ${resultGame[0]}:${resultGame[1]}. `;
+    imgComputerSelection.style.display = "none";
+    return message;
+}
+
+function selectImgComputerSelection(computerSelection){
+    let src;
+    switch (computerSelection){
+        case 'rock':{
+            src = "./img/rock.png";
+            break;
+        }
+        case 'paper':{
+            src="./img/paper.png";
+            break;
+        }
+        case 'scissors':{
+            src="./img/scissors.png"
+            break;
+        }
+    }
+    imgComputerSelection.setAttribute('src', src);
+}
 
 //блокировка кнопок
 function block() {
