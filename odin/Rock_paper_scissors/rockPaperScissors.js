@@ -141,12 +141,12 @@ buttons.forEach((button) => {
             theGameScore.textContent = `${resultGame[0]}:${resultGame[1]}`;
         }
         if (resultGame[0] == 5) {
-            div.textContent = returnResult() + 'Вы выиграли!';
+            div.textContent = returnResult() + 'You win!';
             block();
             return;
         }
         if (resultGame[1] == 5) {
-            div.textContent = returnResult() + 'Вы проиграли!';
+            div.textContent = returnResult() + 'You lose!';
             block();
             return;
         }
@@ -154,7 +154,7 @@ buttons.forEach((button) => {
 });
 
 function returnResult() {
-    const message = `Счет ${resultGame[0]}:${resultGame[1]}. `;
+    const message = `The score ${resultGame[0]}:${resultGame[1]}. `;
     imgComputerSelection.style.display = "none";
     return message;
 }
