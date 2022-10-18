@@ -35,7 +35,13 @@ button{
     border: 0px;
 }
 
-.square:hover{
+.border{
+    border: 1px solid #000;
+}
+
+.square:hover,
+.border:hover
+{
     background-color: antiquewhite;
 }
 
@@ -45,6 +51,3 @@ button{
 
 }
 
-.border{
-    border: 1px solid #000;
-}

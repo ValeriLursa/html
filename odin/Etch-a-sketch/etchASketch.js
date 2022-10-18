@@ -1,6 +1,6 @@
 const panelWidth = 600;
 const borderSize = 0;
-const defaultTableSize = 16;
+const defaultTableSize = 3;
 const defaultColorPanel = 'darkgrey';
 
 let panelDiv = document.querySelector('#panel');
@@ -58,7 +58,7 @@ function addClickToDivTable(divTable) {
         let stringDivTableBackColor = String(divTable.style.backgroundColor);
         let paintColor = "rgb(0, 0, 0)";
         if (stringDivTableBackColor == paintColor) {
-            divTable.style.backgroundColor = defaultColorPanel;
+            divTable.style.backgroundColor = '';
             return;
         }
         divTable.style.backgroundColor = paintColor;
