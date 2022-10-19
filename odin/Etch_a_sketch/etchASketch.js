@@ -1,6 +1,6 @@
 const panelWidth = 600;
 const borderSize = 0;
-const defaultTableSize = 16;
+const defaultTableSize = 3;
 const defaultColorPanel = 'darkgrey';
 let answerFromPlayer = defaultTableSize;
 
@@ -97,3 +97,4 @@ function showGrid(borderSize, className) {
     });
 }
 
+//
