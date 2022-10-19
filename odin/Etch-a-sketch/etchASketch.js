@@ -2,8 +2,10 @@ const panelWidth = 600;
 const borderSize = 0;
 const defaultTableSize = 3;
 const defaultColorPanel = 'darkgrey';
+let answerFromPlayer = defaultTableSize;
 
 let panelDiv = document.querySelector('#panel');
+let gridButton = document.querySelector("#gridButton");
 
 renderingTable(defaultTableSize);
 addClickToGridButton();
@@ -11,8 +13,11 @@ addClickToGridButton();
 const promptButton = document.querySelector('#promptButton');
 promptButton.addEventListener('click', () => {
     const messageToPlayer = 'Enter window size from 1 to 50';
-    let answerFromPlayer = prompt(messageToPlayer);
+    answerFromPlayer = prompt(messageToPlayer);
     if (checkAnswerFromPlayer(+answerFromPlayer)) {
+        panelDiv.style.width = panelWidth + 'px';
+        panelDiv.style.height = panelWidth + 'px';
+        gridButton.textContent = 'Show grid';
         clearPanel();
         renderingTable(answerFromPlayer);
     } else return;
@@ -34,6 +39,7 @@ function checkAnswerFromPlayer(answerFromPlayer) {
 
 function clearPanel() {
     let divTable = document.querySelectorAll('.square');
+    if (divTable.length == 0) divTable = document.querySelectorAll('.border');
     divTable.forEach(devTableElem => {
         panelDiv.removeChild(devTableElem);
     });
@@ -66,7 +72,6 @@ function addClickToDivTable(divTable) {
 }
 
 function addClickToGridButton() {
-    let gridButton = document.querySelector("#gridButton");
     gridButton.addEventListener('click', () => {
         let messageButton = gridButton.textContent;
         if (messageButton == 'Remove grid') {
@@ -82,12 +87,14 @@ function addClickToGridButton() {
 function showGrid(borderSize, className) {
     let divTable;
     if (className == 'border') divTable = document.querySelectorAll('.square');
-    else divTable = document.querySelectorAll('.border');
+        else divTable = document.querySelectorAll('.border');
     let divTableSize = Number(divTable[0].style.width.slice(0, divTable[0].style.width.indexOf('px', 0)));
-    let panelDivSize = (divTableSize + borderSize) * defaultTableSize;
+    let panelDivSize = (divTableSize + borderSize) * answerFromPlayer;
     panelDiv.style.width = String(panelDivSize) + 'px';
     panelDiv.style.height = String(panelDivSize) + 'px';
     divTable.forEach((divTableElem) => {
         divTableElem.setAttribute('class', className);
     });
 }
+
+//
