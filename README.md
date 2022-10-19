@@ -2,7 +2,7 @@
 
 <h2>Odin</h2>
 <h3>Pet-проекты на основе курса https://www.theodinproject.com/paths/foundations/courses/foundations</h3>
-Использумые технологии: html
+Использумые технологии: html, css, js (DOM)
 
 <h3>Menu</h3>
 <ul>
