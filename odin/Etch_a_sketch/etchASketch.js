@@ -1,6 +1,6 @@
 const panelWidth = 600;
 const borderSize = 0;
-const defaultTableSize = 3;
+const defaultTableSize = 16;
 const defaultColorPanel = 'darkgrey';
 let answerFromPlayer = defaultTableSize;
 
@@ -62,8 +62,10 @@ function renderingTable(answerFromPlayer) {
 function addClickToDivTable(divTable) {
     divTable.addEventListener('click', () => {
         let stringDivTableBackColor = String(divTable.style.backgroundColor);
-        let paintColor = "rgb(0, 0, 0)";
-        if (stringDivTableBackColor == paintColor) {
+        console.log(stringDivTableBackColor);
+        let paintColor = randomColor();
+        console.log(paintColor)
+        if (String(divTable.style.backgroundColor) != '') {
             divTable.style.backgroundColor = '';
             return;
         }
@@ -87,7 +89,7 @@ function addClickToGridButton() {
 function showGrid(borderSize, className) {
     let divTable;
     if (className == 'border') divTable = document.querySelectorAll('.square');
-        else divTable = document.querySelectorAll('.border');
+    else divTable = document.querySelectorAll('.border');
     let divTableSize = Number(divTable[0].style.width.slice(0, divTable[0].style.width.indexOf('px', 0)));
     let panelDivSize = (divTableSize + borderSize) * answerFromPlayer;
     panelDiv.style.width = String(panelDivSize) + 'px';
@@ -97,4 +99,14 @@ function showGrid(borderSize, className) {
     });
 }
 
-//
+function randomColor() {
+    let RGBColor = "rgb(";
+    let randomColor;
+    for (let i = 0; i < 2; i++) {
+        randomColor = Math.round(Math.random() * 255) + 1;
+        RGBColor += randomColor + ', ';
+    }
+    randomColor = Math.round(Math.random() * 255) + 1;
+    RGBColor += randomColor + ')';
+    return RGBColor;
+}
