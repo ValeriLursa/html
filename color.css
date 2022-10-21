@@ -76,3 +76,29 @@
 .line6{
     border: 1px solid #FFCCCC;
 }
+
+.rectangleColor7{
+    background-color: #FFA700;
+    color: #0058FF;
+}
+
+.rectangleBackground7{
+    background-color: #FFA700;
+}
+
+.line7{
+    border: 1px solid #0058FF;
+}
+
+.rectangleColor8{
+    background-color: #F09800;
+    color: #0F67FF;
+}
+
+.rectangleBackground8{
+    background-color: #F09800;
+}
+
+.line8{
+    border: 1px solid #0F67FF;
+}
