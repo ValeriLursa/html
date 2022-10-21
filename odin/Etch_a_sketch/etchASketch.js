@@ -82,9 +82,11 @@ function addClickToDivTable(divTable) {
             return;
         }
         const paintColor = randomColor();
+
         divTable.style.backgroundColor = paintColor;
     })
 }
+
 
 function checkColor(color, differenc){
     console.log('checkColor', color, differenc);
@@ -109,7 +111,9 @@ function addClickToGridButton() {
 function showGrid(borderSize, className) {
     let divTable;
     if (className == 'border') divTable = document.querySelectorAll('.square');
+
     else divTable = document.querySelectorAll('.border');
+
     let divTableSize = Number(divTable[0].style.width.slice(0, divTable[0].style.width.indexOf('px', 0)));
     let panelDivSize = (divTableSize + borderSize) * answerFromPlayer;
     panelDiv.style.width = String(panelDivSize) + 'px';
@@ -130,3 +134,4 @@ function randomColor() {
     RGBColor += randomColor + ')';
     return RGBColor;
 }
+
