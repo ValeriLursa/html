@@ -63,14 +63,34 @@ function addClickToDivTable(divTable) {
     divTable.addEventListener('click', () => {
         let stringDivTableBackColor = String(divTable.style.backgroundColor);
         console.log(stringDivTableBackColor);
-        let paintColor = randomColor();
-        console.log(paintColor)
-        if (String(divTable.style.backgroundColor) != '') {
+        // let paintColor = randomColor();
+        if (stringDivTableBackColor === "rgb(0, 0, 0)") {
             divTable.style.backgroundColor = '';
             return;
         }
+        if (stringDivTableBackColor != '') {
+            let index = stringDivTableBackColor.indexOf(')');
+            let str = stringDivTableBackColor.slice(4, index);
+            str = str.split(',');
+            let newColor = [];
+            str.forEach((elem) =>{
+                newColor.push(checkColor(elem, 23));
+            });
+            newColor = 'rgb(' + newColor[0] + ', '+ newColor[1] + ', '+ newColor[2]+ ')'
+            divTable.style.backgroundColor = newColor;
+            console.log(newColor);
+            return;
+        }
+        const paintColor = randomColor();
         divTable.style.backgroundColor = paintColor;
     })
+}
+
+function checkColor(color, differenc){
+    console.log('checkColor', color, differenc);
+    if (color == 0) return color;
+    if (Number(color) < differenc) return 0;
+    return Number(color) - differenc;
 }
 
 function addClickToGridButton() {
