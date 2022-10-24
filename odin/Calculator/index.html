@@ -1,5 +1,6 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="ru">
+
 <head>
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
@@ -7,30 +8,36 @@
     <title>Calculator</title>
     <link rel='stylesheet' href='Calculator.css' />
 </head>
+
 <body>
     <h1>Calculator</h1>
     <div class="panel">
-        <div class="number">
-            <div>1</div>
-            <div>2</div>
-            <div>3</div>
-            <div>4</div>
-            <div>5</div>
-            <div>6</div>
-            <div>7</div>
-            <div>8</div>
-            <div>9</div>
-            <div>0</div>
+        <div class="panel2">
+            <div id="result"></div>
+            <div class="number">
+                <div class="num">1</div>
+                <div class="num">2</div>
+                <div class="num">3</div>
+                <div class="num">4</div>
+                <div class="num">5</div>
+                <div class="num">6</div>
+                <div class="num">7</div>
+                <div class="num">8</div>
+                <div class="num">9</div>
+                <div class="num">0</div>
+            </div>
         </div>
         <div class="button">
-            <div class="add">+</div>
-            <div class="subtract">-</div>
-            <div class="multiply">*</div>
-            <div class="divide">/</div>
-            <div class="result"></div>
-            <div class="clear"></div>
+            <div class="add num">+</div>
+            <div class="subtract num">-</div>
+            <div class="multiply num">*</div>
+            <div class="divide num">/</div>
+            <div class="result num">=</div>
+            <div class="clear num">Clear</div>
         </div>
     </div>
     <script src="Calculator.js"></script>
+    <script src="controller.js"></script>
 </body>
+
 </html>
