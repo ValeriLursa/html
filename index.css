@@ -13,6 +13,8 @@ a:active {
 }
 
 .menu {
+    width: auto;
+    height: auto;
     display: flex;
     justify-content: space-around;
     flex-wrap: wrap;
