@@ -1,24 +1,33 @@
-function add(number1, number2) {
-    return number1 + number2;
-}
+class Calculator {
+    firstNumber = 0;
+    secondNumber = 0;
+    result = 0;
 
-function subtract(number1, number2) {
-    return number1 - number2;
-}
+    constructor() {
+    };
 
-function multiply(number1, number2) {
-    return number1 * number2;
-}
+    add() {
+        return this.firstNumber + this.secondNumber;
+    }
 
-function divide(number1, number2) {
-    return number1 / number2;
-}
+    subtract() {
+        return this.firstNumber - this.secondNumber;
+    }
 
-function operate(operator, number1, number2) {
-    switch (operator) {
-        case '+': return add(number1, number2);
-        case '-': return subtract(number1, number2);
-        case '*': return multiply(number1, number2);
-        case '/': return divide(number1, number2);
+    multiply() {
+        return this.firstNumber * this.secondNumber;
+    }
+
+    divide() {
+        return this.firstNumber / this.secondNumber;
+    }
+
+    operate(operator) {
+        switch (operator) {
+            case '+': return this.add();
+            case '-': return this.subtract();
+            case '*': return this.multiply();
+            case '/': return this.divide();
+        }
     }
 }
