@@ -1,6 +1,7 @@
 class Calculator {
     firstNumber = 0;
     secondNumber = 0;
+    oper = '';
     result = 0;
 
     constructor() {
