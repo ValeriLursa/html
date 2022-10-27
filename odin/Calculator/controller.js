@@ -40,26 +40,35 @@ operateButton.forEach((elem) => {
         countClickOperate++;
         resultMessage += ' ' + elem.textContent + ' ';
         resultTextContent(resultMessage);
+        if (countClickOperate > 1) {
+            // console.log('numberString '+ numberString);
+            if (!checkNumberString()){
+                calculator.oper = elem.textContent;
+                resultMessage = calculator.firstNumber + ' ' + elem.textContent + ' ';
+                resultTextContent(resultMessage);
+                return;
+            }
+            calculator.secondNumber = Number(numberString);
+            numberString = '';
+            let result = calculator.operate(calculator.oper);
+            calculator.firstNumber = result;
+            calculator.secondNumber = 0;
+            calculator.oper = elem.textContent;
+            resultMessage = result + ' ' + elem.textContent + ' ';
+            resultTextContent(resultMessage);
+            // console.log('countClickOperate = '+ countClickOperate, 'result = '+ result, 'resultMessage = ' + resultMessage);
+            return;
+        }
         if (!checkNumberString()) {
             console.log("Нет первого аргумента");
             alert("I don't have first number");
             clearElem.click();
             return;
         }
-        if (countClickOperate > 1) {
-            calculator.secondNumber = Number(numberString);
-            numberString = '';
-            let result = calculator.operate(elem.textContent);
-            calculator.firstNumber = result;
-            calculator.secondNumber = 0;
-            resultMessage = result + ' ' + elem.textContent + ' ';
-            resultTextContent(resultMessage);
-            console.log('countClickOperate = '+ countClickOperate, 'result = '+ result, 'resultMessage = ' + resultMessage);
-            return;
-        }
         calculator.firstNumber = Number(numberString);
+        calculator.oper = elem.textContent;
         numberString = '';
-        console.log('click' + elem.textContent, 'firstNumber = ' + calculator.firstNumber, 'countClickOperate = ' + countClickOperate);
+        // console.log('click' + elem.textContent, 'firstNumber = ' + calculator.firstNumber, 'countClickOperate = ' + countClickOperate);
     })
 })
 
