@@ -29,7 +29,18 @@ clearElem.addEventListener('click', () => {
 
 const resultButton = document.querySelector(".result");
 resultButton.addEventListener("click", () => {
-
+    if (!checkNumberString()){
+        alert("So cool!");
+        return;
+    }
+    calculator.secondNumber = Number(numberString);
+    numberString = '';
+    let result = calculator.operate(calculator.oper);
+    calculator.firstNumber = result;
+    calculator.secondNumber = 0;
+    calculator.oper = resultButton.textContent;
+    resultMessage += ' = ' + result;
+    resultTextContent(resultMessage);
 })
 
 let countClickOperate = 0;
