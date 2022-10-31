@@ -34,21 +34,21 @@ clearElem.addEventListener('click', () => {
 const resultButton = document.querySelector(".result");
 resultButton.addEventListener("click", () => {
     // console.log("numberString " + numberString, "resultMessage " + resultMessage, calculator);
+    calculator.secondNumber = Number(numberString);
     if (!checkNumberString()) {
         if (viewAlert) alert("So cool!");
         return;
     }
-    if (calculator.oper == ''){
+    if (calculator.oper == '') {
         resultMessage = numberString + ' = ' + numberString;
         resultTextContent(resultMessage);
         return;
     }
-    if (calculator.oper == '/'){
+    if ((calculator.oper == '/') && (calculator.secondNumber == 0)) {
         if (viewAlert) alert("I can't do it!");
         clearElem.click();
         return;
     }
-    calculator.secondNumber = Number(numberString);
     numberString = '';
     let result = calculator.operate(calculator.oper);
     calculator.firstNumber = result;

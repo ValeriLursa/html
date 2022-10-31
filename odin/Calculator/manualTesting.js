@@ -110,6 +110,16 @@ function test12(){
     else console.log('Тест 12 провалился ', result.textContent);
 }
 
+function test13(){
+    clearElem.click();
+    numElems[0].click();
+    operateButton[3].click();
+    numElems[0].click();
+    resultButton.click();
+    if (resultElem.textContent == '1 / 1 = 1') console.log('Тест 13 прошел успешно')
+    else console.log('Тест 13 провалился ', result.textContent);
+}
+
 test1();
 test2();
 test3();
@@ -122,4 +132,5 @@ test9();
 test10();
 test11();
 test12();
+test13();
 clearElem.click();
