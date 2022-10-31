@@ -3,6 +3,7 @@ const numElems = document.querySelectorAll(".num");
 const resultElem = document.querySelector("#result");
 let numberString = '';
 let resultMessage = '';
+let viewAlert = false;
 
 function resultTextContent(message) {
     resultElem.textContent = message;
@@ -34,12 +35,16 @@ const resultButton = document.querySelector(".result");
 resultButton.addEventListener("click", () => {
     // console.log("numberString " + numberString, "resultMessage " + resultMessage, calculator);
     if (!checkNumberString()) {
-        alert("So cool!");
+        if (viewAlert) alert("So cool!");
         return;
     }
     if (calculator.oper == ''){
         resultMessage = numberString + ' = ' + numberString;
         resultTextContent(resultMessage);
+        return;
+    }
+    if (calculator.oper == '/'){
+        if (viewAlert) alert("I can't do it!");
         return;
     }
     calculator.secondNumber = Number(numberString);
@@ -82,7 +87,7 @@ operateButton.forEach((elem) => {
         }
         if (!checkNumberString()) {
             // console.log("Нет первого аргумента");
-            alert("I don't have first number");
+            if (viewAlert) alert("I don't have first number");
             clearElem.click();
             return;
         }
