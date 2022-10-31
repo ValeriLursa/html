@@ -59,8 +59,8 @@ function test7(){
     clearElem.click();
     numElems[0].click();
     operateButton[0].click();
-    operateButton[0].click();
-    if (resultElem.textContent == '1 + ') console.log('Тест 7 прошел успешно')
+    operateButton[1].click();
+    if (resultElem.textContent == '1 - ') console.log('Тест 7 прошел успешно')
     else console.log('Тест 7 провалился ', result.textContent);
 }
 
@@ -85,7 +85,7 @@ function test10(){
     operateButton[3].click();
     numElems[9].click();
     resultButton.click();
-    if (resultElem.textContent == '') console.log('Тест 10 прошел успешно')
+    if (resultElem.textContent == '1 / 0') console.log('Тест 10 прошел успешно')
     else console.log('Тест 10 провалился ', result.textContent);
 }
 
@@ -108,5 +108,6 @@ test6();
 test7();
 test8();
 test9();
-// test10();
+test10();
 test11();
+clearElem.click();
