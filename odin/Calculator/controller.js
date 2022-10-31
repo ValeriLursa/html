@@ -14,7 +14,7 @@ numElems.forEach((elem) => {
         numberString += elemText;
         resultMessage += elemText;
         resultTextContent(resultMessage);
-        console.log('numberString = ' + numberString, 'resultMessage = ' + resultMessage);
+        // console.log('numberString = ' + numberString, 'resultMessage = ' + resultMessage);
     })
 })
 
@@ -27,12 +27,12 @@ clearElem.addEventListener('click', () => {
     calculator.firstNumber = 0;
     calculator.secondNumber = 0;
     calculator.oper = '';
-    console.log('Click Clear', numberString + resultMessage);
+    // console.log('Click Clear', numberString + resultMessage);
 })
 
 const resultButton = document.querySelector(".result");
 resultButton.addEventListener("click", () => {
-    console.log("numberString " + numberString, "resultMessage " + resultMessage, calculator);
+    // console.log("numberString " + numberString, "resultMessage " + resultMessage, calculator);
     if (!checkNumberString()) {
         alert("So cool!");
         return;
@@ -50,7 +50,7 @@ resultButton.addEventListener("click", () => {
     calculator.oper = resultButton.textContent;
     resultMessage += ' = ' + result;
     resultTextContent(resultMessage);
-    console.log("numberString " + numberString, "resultMessage " + resultMessage, calculator);
+    // console.log("numberString " + numberString, "resultMessage " + resultMessage, calculator);
 })
 
 let countClickOperate = 0;
@@ -58,7 +58,7 @@ let countClickOperate = 0;
 const operateButton = document.querySelectorAll(".operate");
 operateButton.forEach((elem) => {
     elem.addEventListener('click', () => {
-        console.log("numberString " + numberString, "resultMessage " + resultMessage, calculator);
+        // console.log("numberString " + numberString, "resultMessage " + resultMessage, calculator);
         countClickOperate++;
         
         if (countClickOperate > 1) {
@@ -81,7 +81,7 @@ operateButton.forEach((elem) => {
             return;
         }
         if (!checkNumberString()) {
-            console.log("Нет первого аргумента");
+            // console.log("Нет первого аргумента");
             alert("I don't have first number");
             clearElem.click();
             return;
