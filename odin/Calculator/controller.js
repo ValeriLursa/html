@@ -24,13 +24,22 @@ clearElem.addEventListener('click', () => {
     numberString = '';
     resultMessage = '';
     countClickOperate = 0;
+    calculator.firstNumber = 0;
+    calculator.secondNumber = 0;
+    calculator.oper = '';
     console.log('Click Clear', numberString + resultMessage);
 })
 
 const resultButton = document.querySelector(".result");
 resultButton.addEventListener("click", () => {
-    if (!checkNumberString()){
+    console.log("numberString " + numberString, "resultMessage " + resultMessage, calculator);
+    if (!checkNumberString()) {
         alert("So cool!");
+        return;
+    }
+    if (calculator.oper == ''){
+        resultMessage = numberString + ' = ' + numberString;
+        resultTextContent(resultMessage);
         return;
     }
     calculator.secondNumber = Number(numberString);
@@ -41,6 +50,7 @@ resultButton.addEventListener("click", () => {
     calculator.oper = resultButton.textContent;
     resultMessage += ' = ' + result;
     resultTextContent(resultMessage);
+    console.log("numberString " + numberString, "resultMessage " + resultMessage, calculator);
 })
 
 let countClickOperate = 0;
@@ -48,12 +58,12 @@ let countClickOperate = 0;
 const operateButton = document.querySelectorAll(".operate");
 operateButton.forEach((elem) => {
     elem.addEventListener('click', () => {
+        console.log("numberString " + numberString, "resultMessage " + resultMessage, calculator);
         countClickOperate++;
-        resultMessage += ' ' + elem.textContent + ' ';
-        resultTextContent(resultMessage);
+        
         if (countClickOperate > 1) {
             // console.log('numberString '+ numberString);
-            if (!checkNumberString()){
+            if (!checkNumberString()) {
                 calculator.oper = elem.textContent;
                 resultMessage = calculator.firstNumber + ' ' + elem.textContent + ' ';
                 resultTextContent(resultMessage);
@@ -78,6 +88,9 @@ operateButton.forEach((elem) => {
         }
         calculator.firstNumber = Number(numberString);
         calculator.oper = elem.textContent;
+        calculator.secondNumber = 0;
+        resultMessage = calculator.firstNumber + ' ' + elem.textContent + ' ';
+        resultTextContent(resultMessage);
         numberString = '';
         // console.log('click' + elem.textContent, 'firstNumber = ' + calculator.firstNumber, 'countClickOperate = ' + countClickOperate);
     })
