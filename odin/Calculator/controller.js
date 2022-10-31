@@ -45,6 +45,7 @@ resultButton.addEventListener("click", () => {
     }
     if (calculator.oper == '/'){
         if (viewAlert) alert("I can't do it!");
+        clearElem.click();
         return;
     }
     calculator.secondNumber = Number(numberString);
@@ -65,7 +66,6 @@ operateButton.forEach((elem) => {
     elem.addEventListener('click', () => {
         // console.log("numberString " + numberString, "resultMessage " + resultMessage, calculator);
         countClickOperate++;
-        
         if (countClickOperate > 1) {
             // console.log('numberString '+ numberString);
             if (!checkNumberString()) {
