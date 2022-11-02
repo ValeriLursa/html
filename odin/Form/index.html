@@ -1,13 +1,78 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="ru">
+
 <head>
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel='stylesheet' href="form.css"/>
+    <link rel='stylesheet' href="form.css" />
     <title>Form</title>
 </head>
+
 <body>
-    
+    <div class="main">
+        <div class="emblem">
+            <div class="emblem_elem">
+                Эмблема
+                <div class="text_emblem">VaLurs</div>
+            </div>
+            <div></div>
+        </div>
+        <div class="right">
+            <div class="first text large">
+                <div>
+                    This is not a real online service! You know you need something like this in your life to help you
+                    ralize
+                    your deepest dreams.</br> Sing up <i>now</i> to get started.
+                </div>
+                <div>
+                    You <i>know</i> you want to.
+                </div>
+            </div>
+            <div class="second">
+                <div class="text large">
+                    Let's do this!
+                </div>
+                <form id="form" action="#" method="post">
+                    <div>
+                        <div>
+                            <label for="first_name">FIRST NAME</label>
+                            <input type="text" id="first_name" name="first_name" required>
+                        </div>
+                        <div>
+                            <label for="last_name">LAST NAME</label>
+                            <input type="text" id="last_name" name="last_name" required>
+                        </div>
+                        <div>
+                            <label for="email">EMAIL</label>
+                            <input type="email" id="email" name="email" required>
+                        </div>
+                        <div>
+                            <label for="phone">PHONE NUMBER</label>
+                            <input id="phone" name="phone">
+                        </div>
+                        <div>
+                            <label for="password_first">PASSWORD</label>
+                            <input id="password_first" name="password_first">
+                        </div>
+                        <div>
+                            <label for="password_second">CONFIRM PASSWORD</label>
+                            <input id="password_second" name="password_secons">
+                        </div>
+                    </div>
+                </form>
+            </div>
+            <div class="third">
+                <div>
+                    <button form="form" type="submit">Create Account</button>
+                </div>
+                <div class="text">
+                    Already have an account? <a href='#'>Log in</a>
+                </div>
+            </div>
+        </div>
+        <script src="form.js"></script>
+    </div>
 </body>
+
 </html>
