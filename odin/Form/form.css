@@ -37,7 +37,7 @@
 
     justify-content: center;
     align-items: center;
-    background-color: rgba(255, 255, 255, 0.4);
+    background-color: rgba(255, 255, 255, 0.6);
 }
 
 .text_emblem {
@@ -134,3 +134,19 @@ input:focus{
 /* input:invalid{
     border: 1px solid red;
 } */
+
+/* input:user-valid{
+    border: 1px solid green;
+} */
+
+.error{
+    border: 1px solid red;
+}
+
+.valid{
+    border: 1px solid green;
+}
+
+.errorMessage{
+    color: red;
+}
