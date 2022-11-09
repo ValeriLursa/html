@@ -1,99 +1,100 @@
-let divMessage = document.createElement('div');
-divMessage.textContent = '*Error';
-divMessage.setAttribute('class', 'errorMessage');
 let password_first = document.querySelector('#password_first');
 let password_second = document.querySelector('#password_second');
-
-password_first.addEventListener('blur', () => {
-    if (password_first.value == '') {
-        password_first.setAttribute('class', 'invalid')
-        password_first.parentElement.appendChild(divMessage);
-    }
-    else {
-        password_first.setAttribute('class', 'valid');
-        if (password_first.parentElement.children.length == 3)
-            password_first.parentElement.removeChild(divMessage)
-    }
-})
-
-// password_first.oninvalid = (event) => {
-//     event.target.setCustomValidity('Password cannot be empty');
-// }
-
-password_second.addEventListener('blur', () => {
-    if (password_first.value != password_second.value || password_first.value == '') {
-        console.log(false);
-        password_second.setAttribute('class', 'invalid');
-        password_second.parentElement.appendChild(divMessage);
-    }
-    else {
-        password_second.setAttribute('class', 'valid');
-        if (password_second.parentElement.children.length == 3)
-            password_second.parentElement.removeChild(divMessage)
-    }
-    console.log(password_first.value, password_second.value);
-})
 
 let messageInput = {
     "first_name": 'Name should start with a capital letter and contain only letters. e.g. Mike',
     "last_name": 'Name should start with a capital letter and contain only letters. e.g. Wazowski',
     'email': 'Email should contain symbol @ and .',
-    'phone': 'Phone number must be numeric and contain 10 characters'
+    'phone': 'Phone number must be numeric and contain 10 characters',
+    'password_first': 'Password must be more than 7 characters long, contain at least one uppercase letter and a special character (!@#$%^&*_), can contain numbers',
+    'password_second': 'Cell values do not match'
 }
 
 let patternInput = {
     "first_name": /^[A-Z]{1}[a-z]{1,14}$/,
     "last_name": /^[A-Z]{1}[a-z]{1,14}$/,
     "email": /^[a-zA-Z0-9_.+-]+@[a-z0-9-]+\.[a-z]{2,}$/,
-    "phone": /^[0-9]{10}$/
+    "phone": /^[0-9]{10}$/,
+    'password_first': /^(?=.*[0-9])(?=.*[!@#$%^&*_])(?=.*[a-z])(?=.*[A-Z])[0-9a-zA-Z!@#$%^&*_]{6,}$/
+    // 'password_first': /^[0-9]+$/
 }
+
+function removeClass(elem) {
+    elem.classList.remove('invalid');
+    elem.classList.remove('valid');
+}
+
+function checkInputPattern(elem) {
+    let result = elem.value.match(patternInput[elem.id]);
+    if (result) {
+        matchTrue(elem);
+    }
+    else {
+        matchFalse(elem);
+    }
+    return true;
+}
+
+function matchTrue(elem) {
+    removeClass(elem);
+    elem.classList += ' valid';
+    elem.setCustomValidity('')
+}
+
+function matchFalse(elem) {
+    removeClass(elem);
+    elem.classList += ' invalid';
+    elem.setCustomValidity(messageInput[elem.id]);
+}
+
+function checkPassword(elem1, elem2){
+    if (elem1.value != elem2.value) {
+        matchFalse(elem2);
+        return;
+    }
+    matchTrue(elem2);
+}
+
+password_first.addEventListener('blur', () => {
+    checkInputPattern(password_first);
+})
+
+password_first.addEventListener('input', () => {
+    password_first.setCustomValidity('');
+})
+
+password_second.addEventListener('input', () => {
+    password_second.setCustomValidity('');
+})
+
+password_second.addEventListener('blur', () => {
+    checkPassword(password_first, password_second);
+})
+
 
 let inputArray = document.querySelectorAll('.inputArray');
 inputArray.forEach(elem => {
-    // elem.oninvalid = (event) => {
-    //     event.target.setCustomValidity(messageInput[elem.id]);
-    //     // elem.setAttribute('class', 'error');
-    // }
-
     elem.addEventListener('blur', () => {
-        let result = elem.value.match(patternInput[elem.id]);
-        if (result && elem.value === elem.value.match(patternInput[elem.id]).input) {
-            // if (result){
-            // console.log('true');
-            elem.classList.remove('invalid');
-            elem.classList.remove('valid');
-            elem.classList += ' valid';
-        }
-        else {
-            // console.log('false');
-            elem.classList.remove('valid');
-            elem.classList.remove('invalid');
-            elem.classList += ' invalid';
-        }
+        checkInputPattern(elem);
     })
 
-    elem.addEventListener('focus', () => {
-        return true;
+    elem.addEventListener('input', () => {
+        elem.setCustomValidity('');
     })
 });
 
 let firstName = document.getElementById('first_name');
-// firstName.oninvalid = function (event) {
-//     event.target.setCustomValidity('Name should start with a capital letter and contain only letters. e.g. Mike');
-//     firstName.setAttribute('class', 'error');
-// }
 
 let lastName = document.getElementById('last_name');
-// lastName.oninvalid = function (event) {
-//     event.target.setCustomValidity('Name should start with a capital letter and contain only letters. e.g. Wazowski');
-//     lastName.setAttribute('class', 'error');
-// }
-
-// email.oninvalid = (event) => {
-//     event.target.setCustomValidity('Email should contain symbol @ and .');
-//     email.setAttribute('class', 'error');
-// }
 
 console.log('js file');
 
-//test pattern
+let button = document.getElementById('button');
+
+button.addEventListener('click', () => {
+    inputArray.forEach(elem => {
+        checkInputPattern(elem);
+    })
+    checkInputPattern(password_first);
+    checkPassword(password_first, password_second);
+})
