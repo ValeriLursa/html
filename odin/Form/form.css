@@ -89,6 +89,7 @@ input {
     height: 4vh;
     border: var(--border-input);
     border-radius: 5px;
+    padding: 0px 6px;
 }
 
 .third>div {
@@ -132,15 +133,7 @@ input:focus{
     box-shadow: var(--button-shadow);
 }
 
-/* input:invalid{
-    border: 1px solid red;
-} */
-
-/* input:user-valid{
-    border: 1px solid green;
-} */
-
-.error{
+.invalid{
     border: 1px solid red;
 }
 
