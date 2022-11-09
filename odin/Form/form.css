@@ -24,10 +24,11 @@
     color: var(--button-a-color);
     flex-direction: column;
     justify-content: space-around;
+    flex-wrap: wrap;
 }
 
 .emblem>div {
-    height: 15%;
+    /* height: 15%; */
     width: 100%;
 }
 
@@ -149,4 +150,15 @@ input:focus{
 
 .errorMessage{
     color: red;
+}
+
+@media (max-width: 700px) {
+    .main{
+        flex-direction: column;
+    }
+
+    .emblem{
+        width: 100%;
+        justify-content: flex-start;
+    }
 }
