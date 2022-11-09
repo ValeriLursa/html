@@ -40,7 +40,7 @@ a:active {
 }
 
 .rectangle {
-
+    border: 1px solid #1E1E1E;
     display: flex;
     justify-content: space-between;
     flex-direction: column;
