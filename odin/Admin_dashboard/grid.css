@@ -1,5 +1,60 @@
-.container {
+* {
+    padding: 0px;
+    margin: 0px;
+    --dash-back-color: rgb(25, 146, 212);
+    --yellow: rgb(250, 204, 21);
+    --back-main-panel: rgb(226, 232, 240);
+    font-family: "Trebuchet MS", Verdana, sans-serif;
+}
+
+.grid-main {
     display: grid;
-    /* колличество строк и столбцов в сетке, 2 на 3 */
-    grid-template: 50px 50px / 250px 50px 50px; 
+    grid-template-columns: 250px 1fr;
+    grid-template-rows: repeat(1, 100%);
+    height: 100vh;
+}
+
+.grid-main>div {
+    border: 1px solid blueviolet;
+}
+
+.panel {
+    display: grid;
+}
+
+.sidebar {
+    display: grid;
+    align-items: center;
+    grid-template-rows: 50px 250px 100px;
+    row-gap: 20px;
+    background-color: var(--dash-back-color);
+    color: white;
+    font-size: 20px;
+}
+
+.sidebar>div>div {
+    padding: 5px 15px;
+}
+
+.name-dashboard {
+    display: grid;
+    grid-template-columns: 60px 1fr;
+    grid-template-rows: 1fr;
+    align-items: center;
+    padding: 10px 0px;
+    margin-top: 20px;
+    font-size: 27px;
+}
+
+.end-elem-dash,
+.main-elem-dash {
+    display: grid;
+    grid-template-columns: 40px 1fr;
+    grid-template-rows: 1fr;
+    align-items: start
+}
+
+.main-elem-dash>div>img,
+.end-elem-dash>div>img{
+    width: 23px;
 }
