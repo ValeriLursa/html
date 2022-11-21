@@ -20,6 +20,7 @@
 
 .panel {
     display: grid;
+    grid-template-rows: 200px 1fr;
 }
 
 .sidebar {
@@ -55,6 +56,27 @@
 }
 
 .main-elem-dash>div>img,
-.end-elem-dash>div>img{
+.end-elem-dash>div>img {
     width: 23px;
+}
+
+.main-content {
+    background-color: var(--back-main-panel);
+    display: grid;
+    grid-template: repeat(2, 1fr)/ repeat(1, 2fr) repeat(1, 1fr);
+    /* height: 100vh; */
+}
+
+.main-content>div {
+    border: 1px solid black;
+}
+
+.main-left {
+    grid-row: 1/3;
+
+}
+
+.grid-left {
+    display: grid;
+    grid-template: repeat(3, 1fr) / repeat(2, 1fr);
 }
