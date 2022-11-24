@@ -47,7 +47,7 @@ function matchFalse(elem) {
     elem.setCustomValidity(messageInput[elem.id]);
 }
 
-function checkPassword(elem1, elem2){
+function checkPassword(elem1, elem2) {
     if (elem1.value != elem2.value) {
         matchFalse(elem2);
         return;
