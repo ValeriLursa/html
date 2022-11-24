@@ -56,7 +56,7 @@ h1 {
     justify-content: space-evenly;
     align-items: start;
     flex-wrap: wrap;
-    margin: 0px 0px 25px 25px ;
+    margin: 0px 0px 25px 25px;
 }
 
 .num {
@@ -72,7 +72,7 @@ h1 {
     margin-bottom: 3px;
 }
 
-.num:active{
+.num:active {
     background-color: rgba(80, 147, 226, 1);
     /* top: 4px; */
 }
@@ -84,10 +84,10 @@ h1 {
     flex-direction: column;
     justify-content: space-between;
     text-align: center;
-    margin: 0px 25px 25px 0px ;
+    margin: 0px 25px 25px 0px;
 }
 
-.but{
+.but {
     width: 103px;
     height: 60px;
     /* border: 1px solid #ddd;*/
@@ -100,7 +100,7 @@ h1 {
     margin-bottom: 3px;
 }
 
-.but:active{
+.but:active {
     background-color: rgba(80, 147, 229, 1);
 }
 
@@ -113,4 +113,5 @@ h1 {
     #result {
         width: 350px;
         height: 55px;
+    }
 }
