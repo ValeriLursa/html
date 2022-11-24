@@ -15,12 +15,12 @@
 }
 
 .grid-main>div {
-    border: 1px solid blueviolet;
+    /* border: 1px solid blueviolet; */
 }
 
 .panel {
     display: grid;
-    grid-template-rows: 200px 1fr;
+    grid-template-rows: 160px 1fr;
 }
 
 .sidebar {
@@ -31,6 +31,7 @@
     background-color: var(--dash-back-color);
     color: white;
     font-size: 20px;
+    /* box-shadow: 0 0 100px rgba(0,0,0,0.5); */
 }
 
 .sidebar>div>div {
@@ -68,7 +69,7 @@
 }
 
 .main-content>div {
-    border: 1px solid black;
+    /* border: 1px solid black; */
 }
 
 .main-left {
