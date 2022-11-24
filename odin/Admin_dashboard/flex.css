@@ -1,21 +1,21 @@
-.header{
+.header {
     display: flex;
     flex-direction: column;
-    box-shadow: 1px 1px 3px 0px rgba(0,0,0,0.5);
+    box-shadow: 1px 1px 3px 0px rgba(0, 0, 0, 0.5);
     z-index: 100;
 }
 
 .end-head,
-.start-head{
+.start-head {
     display: flex;
     justify-content: space-between;
     align-items: center;
     padding: 10px 20px;
-    
+
 }
 
 .end-head>div,
-.start-head>div{
+.start-head>div {
     display: flex;
     align-items: center;
 }
@@ -24,43 +24,79 @@
 .end-head>div>div,
 .end-head>div>button,
 .start-head>div>img,
-.start-head>div>div{
+.start-head>div>div {
     margin-right: 15px;
 }
 
-.search{
+.search {
     height: 30px;
     width: 40vw;
     border-radius: 15px;
     background-color: var(--back-main-panel);
 }
 
-.img-profile{
+.img-profile {
     width: 40px;
 }
 
-.img-profile-big{
+.img-profile-big {
     width: 80px;
 }
 
-.img-small{
+.img-small {
     width: 23px;
 }
 
 .end-head,
-.bold{
+.bold {
     font-weight: bold;
 }
 
-.fint-big{
+.fint-big {
     font-size: 25px;
 }
 
-button{
+button {
     background-color: var(--dash-back-color);
     border: 0px;
     width: 70px;
     height: 35px;
     color: white;
     border-radius: 15px;
+}
+
+.grid-left>div {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    /* border: 1px solid violet; */
+    margin: 10px 20px 10px 15px;
+    padding: 20px 5px 20px 15px;
+    border-radius: 10px;
+    background-color: white;
+    box-shadow: 0px 1px 1px 0px rgba(0, 0, 0, 0.3);
+    border-left: 7px solid var(--yellow);
+    color: var(--text-color);
+}
+
+.grid-left>div>div>b {
+    color: black;
+    font-size: 15px;
+}
+
+.support-button {
+    display: flex;
+    justify-content: flex-end;
+}
+
+.support-button>div {
+    /* border: 1px solid pink; */
+    width: 10px;
+    height: 10px;
+    margin-right: 20px;
+}
+
+.grid-left>div>div:first-child {
+    padding-right: 10px;
+    font-size: 14px;
 }

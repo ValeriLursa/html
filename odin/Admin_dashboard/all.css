@@ -1,0 +1,31 @@
+* {
+    padding: 0px;
+    margin: 0px;
+    --dash-back-color: rgb(25, 146, 212);
+    --yellow: rgb(250, 204, 21);
+    --back-main-panel: rgb(226, 232, 240);
+    --text-color: rgb(99, 99, 99);
+    font-family: "Trebuchet MS", Verdana, sans-serif;
+}
+
+.padding-panel {
+    padding: 10px 10px 10px 10px;
+}
+
+.your-project-panel>div,
+.panel {
+    background-color: white;
+    border-radius: 10px;
+    box-shadow: 2px 3px 5px 0px rgba(0, 0, 0, 0.3);
+}
+
+.title-element {
+    color: black;
+    font-size: 19px;
+    font-weight: bold;
+}
+
+.text-element {
+    color: var(--text-color);
+    font-size: 14px;
+}

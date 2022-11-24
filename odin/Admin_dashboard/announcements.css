@@ -1,0 +1,28 @@
+.announcements {
+    display: grid;
+    /* grid-row: repeat(3, 1fr); */
+}
+
+.announcements-panel {
+    --height-line: 1px;
+    display: grid;
+    align-items: center;
+    grid-template-rows: 1fr var(--height-line) 1fr var(--height-line) 1fr;
+}
+
+.announcements-panel>div>div:first-child {
+    color: black;
+    font-size: 15px;
+    font-weight: bold;
+}
+
+.announcements-panel>div>div:nth-child(2) {
+    color: var(--text-color);
+    font-size: 13px;
+}
+
+.announcements-panel>div:nth-child(2n) {
+    background-color: var(--text-color);
+    width: 100%;
+    height: var(--height-line);
+}
