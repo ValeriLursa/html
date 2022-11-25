@@ -1,16 +1,19 @@
 .trending {
-    height: 100%;
+    /* height: 100%; */
+    display: grid;
+    grid-template-rows: 30px 1fr;
 }
 
 .trending-panel {
     display: grid;
     align-items: center;
     grid-template: repeat(4, 1fr) / repeat(1, 50px) repeat(1, 1fr);
-    /* height: 80%; */
+    /* padding: 0px 30px; */
+    column-gap: 20px;
 }
 
 .trending-panel>div {
-    border: 1px solid pink;
+    /* border: 1px solid pink; */
 }
 
 .trending-panel>div>img{
@@ -20,11 +23,13 @@
 
 .trending-panel>div:nth-child(2n)>div:first-child{
     color: black;
-    font-size: 14px;
+    /* font-size: 14px; */
+    font-size: 13px;
     font-weight: bold;
 }
 
 .trending-panel>div:nth-child(2n)>div:nth-child(2){
     color: var(--text-color);
-    font-size: 14px;
+    /* font-size: 14px; */
+    font-size: 13px;
 }

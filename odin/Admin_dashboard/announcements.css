@@ -1,6 +1,6 @@
 .announcements {
     display: grid;
-    /* grid-row: repeat(3, 1fr); */
+    grid-template-rows: 30px 1fr;
 }
 
 .announcements-panel {
@@ -8,17 +8,20 @@
     display: grid;
     align-items: center;
     grid-template-rows: 1fr var(--height-line) 1fr var(--height-line) 1fr;
+    /* padding: 0px 30px ; */
 }
 
 .announcements-panel>div>div:first-child {
     color: black;
-    font-size: 15px;
+    /* font-size: 15px; */
+    font-size: 14px;
     font-weight: bold;
 }
 
 .announcements-panel>div>div:nth-child(2) {
     color: var(--text-color);
-    font-size: 13px;
+    /* font-size: 13px; */
+    font-size: 12px;
 }
 
 .announcements-panel>div:nth-child(2n) {

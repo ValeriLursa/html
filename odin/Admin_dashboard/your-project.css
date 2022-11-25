@@ -1,6 +1,6 @@
 .your-project {
     display: grid;
-    grid-template-rows: 50px 1fr;
+    grid-template-rows: 30px 1fr;
     grid-row: 1/3;
     align-content: stretch;
 }
@@ -8,25 +8,30 @@
 .your-project-panel {
     display: grid;
     grid-template: repeat(3, 1fr) / repeat(2, 1fr);
+    row-gap: 20px;
+    column-gap: 20px;
 }
 
 .your-project-panel>div {
     border-left: 7px solid var(--yellow);
     display: grid;
-
+    align-content: space-between;
+    padding: 20px 20px ;
 }
 
 .your-project-panel>div>div:first-child>div:first-child {
     /*your project title elem*/
     color: black;
-    font-size: 18px;
+    /* font-size: 18px; */
+    font-size: 17px;
     font-weight: bold;
 }
 
 .your-project-panel>div>div:first-child>div:nth-child(2) {
     /* your project text elem */
     color: var(--text-color);
-    font-size: 16px;
+    /* font-size: 16px; */
+    font-size: 15px;
 }
 
 .your-project-panel>div>div:nth-child(2) {
@@ -37,7 +42,12 @@
 
 .your-project-panel>div>div:nth-child(2)>div {
     /* your project button elem */
-    border: 1px solid pink;
+    /* border: 1px solid pink; */
+    width: 20px;
+    height: 20px;
+}
+
+.your-project-panel>div>div:nth-child(2)>div>img{
     width: 20px;
     height: 20px;
 }
