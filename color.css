@@ -78,27 +78,40 @@
 }
 
 .rectangleColor7{
-    background-color: #FFA700;
-    color: #0058FF;
+    background-color: #9A4B30;
+    color: #65B4CF;
 }
 
 .rectangleBackground7{
-    background-color: #FFA700;
+    background-color: #9A4B30;
 }
 
 .line7{
-    border: 1px solid #0058FF;
+    border: 1px solid #65B4CF;
 }
 
 .rectangleColor8{
-    background-color: #F09800;
-    color: #0F67FF;
+    background-color: #8B3C21;
+    color: #74C3DE;
 }
 
 .rectangleBackground8{
-    background-color: #F09800;
+    background-color: #8B3C21;
 }
 
 .line8{
-    border: 1px solid #0F67FF;
+    border: 1px solid #74C3DE;
+}
+
+.rectangleColor9{
+    background-color: #7C2D12;
+    color: #83D2ED;
+}
+
+.rectangleBackground9{
+    background-color: #7C2D12;
+}
+
+.line9{
+    border: 1px solid #83D2ED;
 }
