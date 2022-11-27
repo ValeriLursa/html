@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <ul id="myLibrary"></ul>
+    <button id="newBook" onclick="createNewBook()">New Book</button>
+    <form id="panelInput">
+        <div>
+            <label for="name">Book's name</label>
+            <input type="text" id="name">
+        </div>
+        <div>
+            <label for="author">Book's author</label>
+            <input type="text" id="author">
+        </div>
+        <div>
+            <label for="pages">Pages</label>
+            <input type="text" id="pages">
+        </div>
+        <div>
+            <label for="read">Read?</label>
+            <input type="text" id="read">
+        </div>
+        <div>
+        <button form="panelInput" type="submit" id="addBook">Add Book</button>
+    </form>
+    <script src="app.js"></script>
+    <script>
+        let myLibraryHTML = document.getElementById('myLibrary');
+        //IIFE
+        /**
+         * функция перебора массива и отображение каждой книги в отдельной строке списка
+         */
+        (function forEachMyLibrary() {
+            myLibrary.forEach(elem => {
+                let li = document.createElement('li');
+                li.textContent = elem.info();
+                myLibraryHTML.appendChild(li);
+            });
+        })();
+
+        let panelInput = document.getElementById('panelInput');
+        panelInput.style.display = 'none';
+
+        let newBookButton = document.getElementById('newBook');
+
+        //newBook
+        function createNewBook() {
+            panelInput.style.display = 'block';
+            newBookButton.style.display = 'none';
+        }
+
+        let addBookButton = document.getElementById("addBook");
+
+        //addBook
+        addBookButton.addEventListener('click',() => {
+            console.log('addBook');
+            event.preventDefault();
+        }, false);
+    </script>
+</body>
+
+</html>
