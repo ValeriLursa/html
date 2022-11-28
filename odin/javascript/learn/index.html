@@ -43,9 +43,20 @@
          */
         function forEachMyLibrary() {
             myLibraryHTML.replaceChildren();
+            let count = 1;
             myLibrary.forEach(elem => {
                 let li = document.createElement('li');
                 li.textContent = elem.info();
+
+                let deleteButton = document.createElement('button');
+                deleteButton.textContent = 'Delete';
+                deleteButton.setAttribute('id', count++);
+                deleteButton.addEventListener('click', (id) => {
+                    deleteBookByLibrary(deleteButton.id - 1);
+                    forEachMyLibrary();
+                });
+                li.appendChild(deleteButton);
+
                 myLibraryHTML.appendChild(li);
             });
         };
@@ -95,17 +106,17 @@
                     return false;
                 }
             }
-            if (!form.elements.read.value.match(patterns['read'])){
+            if (!form.elements.read.value.match(patterns['read'])) {
                 return false;
             }
             return true;
         }
 
-        function clearForm(){
+        function clearForm() {
             panelInput.name.value = '';
             panelInput.author.value = '';
             panelInput.pages.value = '';
-            panelInput.read.forEach(elem =>{
+            panelInput.read.forEach(elem => {
                 elem.checked = false;
             })
         }

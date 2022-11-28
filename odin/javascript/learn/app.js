@@ -31,6 +31,10 @@ function returnBookToLibrary(indexBookByMyLibrary) {
     return myLibrary[indexBookByMyLibrary].info();
 }
 
+function deleteBookByLibrary(indexBookByMyLibrary) {
+    myLibrary.splice(indexBookByMyLibrary, 1);
+}
+
 
 let listBook = [
     ['1984', 'Murakami1', 1900, 'read'],
