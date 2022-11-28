@@ -6,7 +6,7 @@ function Book(title, author, pages, read) {
     this.pages = pages
     this.read = read;
     this.info = () => {
-        return '"' + this.title + ' by ' + this.author + ', ' + this.pages + ' pages, ' + this.read + '"';
+        return this.title + "\nby " + this.author + ', ' + this.pages + ' pages, ' + this.read;
     }
 }
 
@@ -44,9 +44,9 @@ function changeReadStatusByBook(indexBookByMyLibrary) {
 }
 
 let listBook = [
-    ['1984', 'Murakami1', 1900, 'read'],
-    ['1984', 'Murakami2', 1900, 'read'],
-    ['1984', 'Murakami3', 1900, 'read']
+    ['Библиотекарь', 'Михаил Елизаров', 448, 'no read'],
+    ['Пройти сквозь стены. Автобиография', 'Марина Абрамович', 400, 'read'],
+    ['Школа жён', 'Жан-Батист Мольер', 88, 'read']
 ]
 
 listBook.forEach(elem => {

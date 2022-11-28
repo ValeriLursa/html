@@ -1,16 +1,101 @@
-*{
+* {
     margin: 0px;
     padding: 0px;
 }
 
-.panel{
+.panel {
     background-color: #E7CA81;
     height: 100px;
     width: 100%;
     color: #18357E;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
 }
 
-.newBook{
+.panel>div {
+    display: flex;
+    align-items: baseline;
+}
 
-    
+.textHead {
+    font-family: 'Inter';
+    font-style: normal;
+    font-weight: 700;
+    font-size: 20px;
+    line-height: 36px;
+    text-align: center;
+}
+
+.header {
+    font-family: 'Inter';
+    font-style: normal;
+    font-weight: 700;
+    font-size: 30px;
+    line-height: 36px;
+    text-align: center;
+}
+
+#newBook {
+    border: 0px;
+    background-color: #E7CA81;
+    margin-left: 20px;
+    color: #04216A;
+
+}
+
+#newBook:hover {
+    background-color: rgba(221, 192, 119);
+    /* border: 1px solid black; */
+}
+
+#myLibrary {
+    display: flex;
+    justify-content: space-around;
+}
+
+#myLibrary>div {
+    display: flex;
+    flex-direction: column;
+    /* align-items: center; */
+    background-color: #FAA659;
+    /* padding: 10px 50px 10px 50px; */
+}
+
+#myLibrary>div>button{
+    border: 0px;
+    background-color: #A55103;
+    margin-bottom: 20px;
+}
+
+.cardBook {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.cardBook>div{
+    margin-bottom: 10px;
+}
+
+#myLibrary>div>button,
+.authorBook,
+.titleBook{
+    color: #550000;
+    font-family: 'Inter';
+    font-style: normal;
+    font-weight: 700;
+    font-size: 20px;
+    line-height: 36px;
+    text-align: center;
+}
+
+.text{
+    color: black;
+    font-family: 'Inter';
+    font-style: normal;
+    font-weight: 700;
+    font-size: 20px;
+    line-height: 36px;
+    text-align: center;
 }

@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="ru">
 
 <head>
     <meta charset="UTF-8">
@@ -11,10 +11,16 @@
 
 <body>
     <div class="panel">
-        <div>My Library</div>
+        <div class="header">My Library</div>
+        <div>
+            <div id="message" class="textHead">there are 20 books in the library</div>
+            <div>
+                <button id="newBook" class="textHead" onclick="createNewBook()">+ New Book</button>
+            </div>
+        </div>
     </div>
-    <ul id="myLibrary"></ul>
-    <button id="newBook" onclick="createNewBook()">New Book</button>
+    <div id="myLibrary"></div>
+
     <form id="panelInput">
         <div>
             <label for="name">Book's name</label>
@@ -49,8 +55,37 @@
             myLibraryHTML.replaceChildren();
             let count = 1;
             myLibrary.forEach(elem => {
-                let li = document.createElement('li');
-                li.textContent = elem.info();
+                let li = document.createElement('div');
+                
+
+                let cardBook = document.createElement('div');
+                cardBook.setAttribute('class', 'cardBook');
+                let divTitle = document.createElement('div');
+                divTitle.textContent = elem.title;
+                divTitle.setAttribute('class', 'titleBook');
+                cardBook.appendChild(divTitle);
+                let divBy = document.createElement('div');
+                divBy.textContent = 'by';
+                divBy.setAttribute('class', 'text');
+                cardBook.appendChild(divBy);
+                let divAuthor = document.createElement('div');
+                divAuthor.textContent = elem.author;
+                divAuthor.setAttribute('class', 'authorBook');
+                cardBook.appendChild(divAuthor);
+                let divPages = document.createElement('div');
+                divPages.textContent = elem.pages + ' pages';
+                divPages.setAttribute('class', 'text');
+                cardBook.appendChild(divPages);
+                li.appendChild(cardBook);
+
+                let setRead = document.createElement('button');
+                setRead.textContent = elem.read;
+                setRead.setAttribute('id', count);
+                setRead.addEventListener('click', (id) => {
+                    changeReadStatusByBook(setRead.id - 1);
+                    forEachMyLibrary();
+                });
+                li.appendChild(setRead);
 
                 let deleteButton = document.createElement('button');
                 deleteButton.textContent = 'Delete';
@@ -61,14 +96,7 @@
                 });
                 li.appendChild(deleteButton);
 
-                let setRead = document.createElement('button');
-                setRead.textContent = elem.read;
-                setRead.setAttribute('id', count);
-                setRead.addEventListener('click', (id) => {
-                    changeReadStatusByBook(setRead.id - 1);
-                    forEachMyLibrary();
-                });
-                li.appendChild(setRead);
+
 
                 myLibraryHTML.appendChild(li);
                 count++;
@@ -85,7 +113,7 @@
         //newBook
         function createNewBook() {
             panelInput.style.display = 'block';
-            newBookButton.style.display = 'none';
+            // newBookButton.style.display = 'none';
         }
 
         let addBookButton = document.getElementById("addBook");
