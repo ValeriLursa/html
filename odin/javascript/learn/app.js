@@ -18,8 +18,9 @@ let myLibrary = [];
  * @return {boolean}
  */
 function addBookToLibrary(dataFromPerson) {
-    myLibrary.push(new Book(dataFromPerson[0], dataFromPerson[1], dataFromPerson[2], dataFromPerson[3]))
-    return true;
+    const elem = new Book(dataFromPerson[0], dataFromPerson[1], dataFromPerson[2], dataFromPerson[3]);
+    myLibrary.push(elem)
+    return elem;
 }
 
 /**
@@ -38,5 +39,5 @@ let listBook = [
 ]
 
 listBook.forEach(elem => {
-    console.log(addBookToLibrary(elem));
+    addBookToLibrary(elem);
 })

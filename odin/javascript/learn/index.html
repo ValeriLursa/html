@@ -25,11 +25,14 @@
             <input type="text" id="pages">
         </div>
         <div>
-            <label for="read">Read?</label>
-            <input type="text" id="read">
+            <label>Read?</label>
+            <input type="radio" id="readOn" name="read" value="Да">
+            <label for="readOn">Да</label>
+            <input type="radio" id="readOff" name="read" value="Нет">
+            <label for="readOff">Нет</label>
         </div>
         <div>
-        <button form="panelInput" type="submit" id="addBook">Add Book</button>
+            <button form="panelInput" type="submit" id="addBook">Add Book</button>
     </form>
     <script src="app.js"></script>
     <script>
@@ -38,13 +41,16 @@
         /**
          * функция перебора массива и отображение каждой книги в отдельной строке списка
          */
-        (function forEachMyLibrary() {
+        function forEachMyLibrary() {
+            myLibraryHTML.replaceChildren();
             myLibrary.forEach(elem => {
                 let li = document.createElement('li');
                 li.textContent = elem.info();
                 myLibraryHTML.appendChild(li);
             });
-        })();
+        };
+
+        forEachMyLibrary();
 
         let panelInput = document.getElementById('panelInput');
         panelInput.style.display = 'none';
@@ -60,10 +66,49 @@
         let addBookButton = document.getElementById("addBook");
 
         //addBook
-        addBookButton.addEventListener('click',() => {
-            console.log('addBook');
+        addBookButton.addEventListener('click', () => {
             event.preventDefault();
+            //
+            if (validationForm(panelInput)) {
+                addBookToLibrary([panelInput.name.value, panelInput.author.value, panelInput.pages.value, panelInput.read.value]);
+                forEachMyLibrary();
+                //
+                panelInput.style.display = 'none';
+                newBookButton.style.display = 'block';
+                //clear form
+                clearForm();
+            }
+            else alert('Invalid form');
+
         }, false);
+
+        const patterns = {
+            'name': /^[A-ZА-Я]{1}[a-zа-я]{1,14}$/,
+            'author': /^[A-ZА-Я]{1}[a-zа-я]{1,14}$/,
+            'pages': /^[0-9]{1,5}$/,
+            'read': /^Да|Нет$/
+        }
+
+        function validationForm(form) {
+            for (let i = 0; i < 3; i++) {
+                if (!form.elements[i].value.match(patterns[form.elements[i].id])) {
+                    return false;
+                }
+            }
+            if (!form.elements.read.value.match(patterns['read'])){
+                return false;
+            }
+            return true;
+        }
+
+        function clearForm(){
+            panelInput.name.value = '';
+            panelInput.author.value = '';
+            panelInput.pages.value = '';
+            panelInput.read.forEach(elem =>{
+                elem.checked = false;
+            })
+        }
     </script>
 </body>
 
