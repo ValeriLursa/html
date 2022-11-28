@@ -5,10 +5,14 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
+    <title>My Library</title>
+    <link rel='stylesheet' href="css.css" />
 </head>
 
 <body>
+    <div class="panel">
+        <div>My Library</div>
+    </div>
     <ul id="myLibrary"></ul>
     <button id="newBook" onclick="createNewBook()">New Book</button>
     <form id="panelInput">
@@ -58,7 +62,7 @@
                 li.appendChild(deleteButton);
 
                 let setRead = document.createElement('button');
-                setRead.textContent = 'Change status';
+                setRead.textContent = elem.read;
                 setRead.setAttribute('id', count);
                 setRead.addEventListener('click', (id) => {
                     changeReadStatusByBook(setRead.id - 1);
