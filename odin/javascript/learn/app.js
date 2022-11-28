@@ -35,6 +35,13 @@ function deleteBookByLibrary(indexBookByMyLibrary) {
     myLibrary.splice(indexBookByMyLibrary, 1);
 }
 
+function changeReadStatusByBook(indexBookByMyLibrary) {
+    const status = myLibrary[indexBookByMyLibrary].read;
+    if (status == 'read') {
+        myLibrary[indexBookByMyLibrary].read = 'no read';
+    } 
+    else myLibrary[indexBookByMyLibrary].read = 'read';
+}
 
 let listBook = [
     ['1984', 'Murakami1', 1900, 'read'],

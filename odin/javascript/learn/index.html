@@ -26,10 +26,10 @@
         </div>
         <div>
             <label>Read?</label>
-            <input type="radio" id="readOn" name="read" value="Да">
-            <label for="readOn">Да</label>
-            <input type="radio" id="readOff" name="read" value="Нет">
-            <label for="readOff">Нет</label>
+            <input type="radio" id="readOn" name="read" value="read">
+            <label for="readOn">Read</label>
+            <input type="radio" id="readOff" name="read" value="no read">
+            <label for="readOff">No read</label>
         </div>
         <div>
             <button form="panelInput" type="submit" id="addBook">Add Book</button>
@@ -50,14 +50,24 @@
 
                 let deleteButton = document.createElement('button');
                 deleteButton.textContent = 'Delete';
-                deleteButton.setAttribute('id', count++);
+                deleteButton.setAttribute('id', count);
                 deleteButton.addEventListener('click', (id) => {
                     deleteBookByLibrary(deleteButton.id - 1);
                     forEachMyLibrary();
                 });
                 li.appendChild(deleteButton);
 
+                let setRead = document.createElement('button');
+                setRead.textContent = 'Change status';
+                setRead.setAttribute('id', count);
+                setRead.addEventListener('click', (id) => {
+                    changeReadStatusByBook(setRead.id - 1);
+                    forEachMyLibrary();
+                });
+                li.appendChild(setRead);
+
                 myLibraryHTML.appendChild(li);
+                count++;
             });
         };
 
@@ -97,7 +107,7 @@
             'name': /^[A-ZА-Я]{1}[a-zа-я]{1,14}$/,
             'author': /^[A-ZА-Я]{1}[a-zа-я]{1,14}$/,
             'pages': /^[0-9]{1,5}$/,
-            'read': /^Да|Нет$/
+            'read': /^read|no read$/
         }
 
         function validationForm(form) {
