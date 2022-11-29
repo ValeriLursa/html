@@ -6,7 +6,7 @@
 .panel {
     background-color: #E7CA81;
     height: 100px;
-    width: 100%;
+    /* width: 100%;  */
     color: #18357E;
     display: flex;
     justify-content: space-around;
@@ -42,7 +42,7 @@
     background-color: #E7CA81;
     margin-left: 20px;
     color: #04216A;
-
+    padding: 5px;
 }
 
 #newBook:hover {
@@ -53,8 +53,9 @@
 #myLibrary {
     display: grid;
     grid-template-columns: repeat(3, 1fr);
-    grid-template-rows: repeat(1, 100%);
+    grid-template-rows: repeat(1, 1fr);
     column-gap: 40px;
+    row-gap: 40px;
     margin: 30px 50px 30px 50px;
 }
 
@@ -88,6 +89,8 @@
     margin-bottom: 10px;
 }
 
+#panelInput>div:nth-child(2)>button,
+.panelInputButton>button,
 .divButtons>button,
 .authorBook,
 .titleBook {
@@ -100,6 +103,7 @@
     text-align: center;
 }
 
+
 .text {
     color: black;
     font-family: 'Inter';
@@ -109,3 +113,4 @@
     line-height: 36px;
     text-align: center;
 }
+
