@@ -1,0 +1,87 @@
+.grid {
+    display: grid;
+    grid-template-columns: 0.5fr 1fr 0.5fr;
+    grid-template-rows: 1fr;
+    position: absolute;
+    z-index: 100;
+    left: 0px;
+    top: 0px;
+    width: 100%;
+    height: 100%;
+    align-items: center;
+}
+
+#panelInput {
+
+    /* left: 50vw;
+    top: 50vh; */
+    height: 300px;
+    background-color: #E7CA81;
+    display: grid;
+    grid-template-columns: 0.4fr 1fr;
+    grid-template-rows: repeat(6, 1fr);
+    row-gap: 10px;
+    padding: 10px;
+    align-items: center
+}
+
+.panelInputButton {
+    grid-column-start: 1;
+    grid-column-end: 3;
+    display: grid;
+
+}
+
+#panelInput>div:nth-child(2)>button{
+    border: 0px;
+    background-color: #A55103;
+    grid-column-start: 4;
+    grid-column-end: 5;
+}
+
+.panelInputButton>button {
+    border: 0px;
+    background-color: #A55103;
+    grid-column-start: 1;
+    grid-column-end: 5;
+}
+
+#panelInput>div {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    /* grid-template-rows: repeat(2, 1fr); */
+}
+
+#panelInput>div>label,
+#panelInput>label {
+    color: black;
+    font-family: 'Inter';
+    font-style: normal;
+    font-weight: 700;
+    font-size: 20px;
+    line-height: 36px;
+}
+
+#panelInput>input {
+    color: #550000;
+    font-family: 'Inter';
+    font-style: normal;
+    font-weight: 700;
+    font-size: 20px;
+    line-height: 36px;
+    background-color: #E7CA81;
+    border: 0px;
+    border-bottom: 1px solid black;
+}
+
+input[type=radio] {
+    background-color: #550000;
+    border: 1px solid #550000 ;
+}
+
+input[type=radio]:checked {
+
+    border: 6px solid black;
+    ;
+}
+
