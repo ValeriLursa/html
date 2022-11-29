@@ -56,7 +56,7 @@
             let count = 1;
             myLibrary.forEach(elem => {
                 let li = document.createElement('div');
-                
+
 
                 let cardBook = document.createElement('div');
                 cardBook.setAttribute('class', 'cardBook');
@@ -78,14 +78,18 @@
                 cardBook.appendChild(divPages);
                 li.appendChild(cardBook);
 
+                let divButtons = document.createElement('div');
+                divButtons.setAttribute('class', 'divButtons');
+
                 let setRead = document.createElement('button');
                 setRead.textContent = elem.read;
                 setRead.setAttribute('id', count);
                 setRead.addEventListener('click', (id) => {
                     changeReadStatusByBook(setRead.id - 1);
                     forEachMyLibrary();
+                    returnMessage();
                 });
-                li.appendChild(setRead);
+                divButtons.appendChild(setRead);
 
                 let deleteButton = document.createElement('button');
                 deleteButton.textContent = 'Delete';
@@ -93,10 +97,11 @@
                 deleteButton.addEventListener('click', (id) => {
                     deleteBookByLibrary(deleteButton.id - 1);
                     forEachMyLibrary();
+                    returnMessage();
                 });
-                li.appendChild(deleteButton);
+                divButtons.appendChild(deleteButton);
 
-
+                li.appendChild(divButtons);
 
                 myLibraryHTML.appendChild(li);
                 count++;
@@ -104,6 +109,18 @@
         };
 
         forEachMyLibrary();
+        let message = document.getElementById('message');
+
+        function returnMessage() {
+            const q = myLibrary.length;
+            let mes = '';
+            if (q == 0) mes = 'there are no books in the library';
+            if (q == 1) mes = 'there is 1 book in the library'
+            if (q > 1) mes = "there are " + myLibrary.length + " books in the library";
+            message.textContent = mes;
+        }
+
+        returnMessage();
 
         let panelInput = document.getElementById('panelInput');
         panelInput.style.display = 'none';
@@ -113,7 +130,6 @@
         //newBook
         function createNewBook() {
             panelInput.style.display = 'block';
-            // newBookButton.style.display = 'none';
         }
 
         let addBookButton = document.getElementById("addBook");
@@ -125,6 +141,7 @@
             if (validationForm(panelInput)) {
                 addBookToLibrary([panelInput.name.value, panelInput.author.value, panelInput.pages.value, panelInput.read.value]);
                 forEachMyLibrary();
+                returnMessage();
                 //
                 panelInput.style.display = 'none';
                 newBookButton.style.display = 'block';
