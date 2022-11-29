@@ -1,117 +1,139 @@
-.rectangleColor1{
+* {
+    --back-color-10: #653875;
+    --text-color-10: #9AC78A;
+    --back-color-11: #562966;
+    --text-color-11: #A9D699;
+    --back-color-12: #471A57;
+    --text-color-12: #B8E5A8;
+}
+
+.rectangleColor1 {
     background-color: #FFFFFF;
 
     color: #000000;
 }
 
-.rectangleBackground1{
+.rectangleBackground1 {
     background: #FFFFFF;
 }
 
-.line1{
+.line1 {
     border: 1px solid #000000;
 }
 
-.rectangleColor2{
+.rectangleColor2 {
     background: #001F54;
     color: #FFE433;
 }
 
-.rectangleBackground2{
+.rectangleBackground2 {
     background-color: #001F54;
 }
 
-.line2{
+.line2 {
     border: 1px solid #FFE433;
 }
 
-.rectangleColor3{
+.rectangleColor3 {
     background-color: #001045;
     color: #FFEFBA;
 }
 
-.rectangleBackground3{
+.rectangleBackground3 {
     background-color: #001045;
 }
 
-.line3{
+.line3 {
     border: 1px solid #FFEFBA;
 }
 
-.rectangleColor4{
+.rectangleColor4 {
     background-color: #0F5151;
     color: #F0AEAE;
 }
 
-.rectangleBackground4{
+.rectangleBackground4 {
     background-color: #0F5151;
 }
 
-.line4{
+.line4 {
     border: 1px solid #F0AEAE;
 }
 
-.rectangleColor5{
+.rectangleColor5 {
     background-color: #004242;
     color: #FFBDBD;
 }
 
-.rectangleBackground5{
+.rectangleBackground5 {
     background-color: #004242;
 }
 
-.line5{
+.line5 {
     border: 1px solid #FFBDBD;
 }
 
-.rectangleColor6{
+.rectangleColor6 {
     background-color: #003333;
     color: #FFCCCC;
 }
 
-.rectangleBackground6{
+.rectangleBackground6 {
     background-color: #003333;
 }
 
-.line6{
+.line6 {
     border: 1px solid #FFCCCC;
 }
 
-.rectangleColor7{
+.rectangleColor7 {
     background-color: #9A4B30;
     color: #65B4CF;
 }
 
-.rectangleBackground7{
+.rectangleBackground7 {
     background-color: #9A4B30;
 }
 
-.line7{
+.line7 {
     border: 1px solid #65B4CF;
 }
 
-.rectangleColor8{
+.rectangleColor8 {
     background-color: #8B3C21;
     color: #74C3DE;
 }
 
-.rectangleBackground8{
+.rectangleBackground8 {
     background-color: #8B3C21;
 }
 
-.line8{
+.line8 {
     border: 1px solid #74C3DE;
 }
 
-.rectangleColor9{
+.rectangleColor9 {
     background-color: #7C2D12;
     color: #83D2ED;
 }
 
-.rectangleBackground9{
+.rectangleBackground9 {
     background-color: #7C2D12;
 }
 
-.line9{
+.line9 {
     border: 1px solid #83D2ED;
+}
+
+.rectangleColor10 {
+    background-color: var(--back-color-10);
+    color: var(--text-color-10);
+}
+
+.rectangleBackground10 {
+    background-color: var(--back-color-10);
+}
+
+.line10 {
+    border: 1px solid var(--text-color-10);
 }
