@@ -52,7 +52,7 @@ const Gameboard = (() => {
         return 'next';
     }
 
-    const setElemByGameNoard = (elem, x, y) => {
+    const setElemByGameBoard = (elem, x, y) => {
         if (x > 3 || x < 0) return 'error';
         if (y > 3 || y < 0) return 'error';
 
@@ -60,6 +60,6 @@ const Gameboard = (() => {
     }
 
     return {
-        setGameBoard, getGameBoard, checkResult, setElemByGameNoard, getRowGameBoard
+        setGameBoard, getGameBoard, checkResult, setElemByGameBoard, getRowGameBoard
     }
 })();
