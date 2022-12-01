@@ -9,6 +9,8 @@ const Gameboard = (() => {
 
     const getGameBoard = () => gameboard;
 
+    const getRowGameBoard = () => rowGameBoard;
+
     const checkResult = () => {
         let bool = true;
 
@@ -19,7 +21,7 @@ const Gameboard = (() => {
             for (let j = 1; j < columnGameBoard; j++) {
                 if (gameboard[i][j] != firstElem) bool = false;
             }
-            if (bool) return 'Win';
+            if (bool) return firstElem;
         }
 
         //check columns
@@ -29,18 +31,25 @@ const Gameboard = (() => {
             for (let j = 1; j < rowGameBoard; j++) {
                 if (gameboard[j][i] != firstElem) bool = false;
             }
-            if (bool) return 'Win';
+            if (bool) return firstElem;
         }
 
         //check diagonals
-        const firstElem = gameboard[0][0];
+        let firstElem = gameboard[0][0];
         bool = true;
         for (let i = 1; i < rowGameBoard; i++) {
             if (gameboard[i][i] != firstElem) bool = false;
         }
-        if (bool) return 'Win';
+        if (bool) return firstElem;
 
-        return 'Lose';
+        firstElem = gameboard[rowGameBoard - 1][0];
+        bool = true;
+        for (let i = 1; i < columnGameBoard; i++) {
+            if (gameboard[rowGameBoard - i - 1][i] != firstElem) bool = false;
+        }
+        if (bool) return firstElem;
+
+        return 'next';
     }
 
     const setElemByGameNoard = (elem, x, y) => {
@@ -51,6 +60,6 @@ const Gameboard = (() => {
     }
 
     return {
-        setGameBoard, getGameBoard, checkResult, setElemByGameNoard
+        setGameBoard, getGameBoard, checkResult, setElemByGameNoard, getRowGameBoard
     }
 })();
