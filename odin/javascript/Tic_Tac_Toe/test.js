@@ -1,3 +1,5 @@
+console.log('test.js connect')
+
 const testList = [
     {
         1: [[[1, 2, 'x'],
