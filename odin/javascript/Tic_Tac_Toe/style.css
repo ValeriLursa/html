@@ -8,6 +8,10 @@ body {
     grid-template-columns: repeat(2, 1fr); */
 }
 
+.heading{
+    height: 100px;
+}
+
 .panel {
     display: grid;
     grid-template-columns: repeat(2, 1fr);
