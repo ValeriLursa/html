@@ -49,7 +49,9 @@ const displayController = (() => {
                     if (elemGameBoard.textContent == '') {
                         for (let z = 0; z < 2; z++) {
                             if (player[z].getMove()) {
-                                elemGameBoard.textContent = player[z].getElem();
+                                elemGameBoard.value = player[z].getElem();
+                                const elemImage = ElementImage(player[z].getElem());
+                                elemGameBoard.appendChild(elemImage.getElem());
                                 oneMove(z, i, j);
                                 return;
                             }
@@ -93,8 +95,8 @@ const displayController = (() => {
             startButton.style.display = 'block';
             startButton.focus();
             winnerHTML.style.display = 'block';
-            player1HTML.textContent = 'First player ' + player[0].getName();
-            player2HTML.textContent = 'Second player ' + player[1].getName();
+            player1HTML.textContent = 'First player ' + player[0].getName() + ' ' + player[0].getElem();
+            player2HTML.textContent = 'Second player ' + player[1].getName()  + ' ' + player[1].getElem();
             return;
         }
     }
