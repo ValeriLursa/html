@@ -46,6 +46,11 @@ body {
     grid-template-columns: repeat(3, 1fr);
 }
 
+img{
+    width: 100%;
+    height: 100%;
+}
+
 .rowElemGameBoard>div {
     border: 1px solid black;
 }
