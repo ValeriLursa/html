@@ -4,6 +4,7 @@ const Gameboard = (() => {
     [7, 8, 9]];
     let rowGameBoard = gameboard.length;
     let columnGameBoard = gameboard[0].length;
+    let count = 0;
 
     const setGameBoard = (gameboardConst) => gameboard = gameboardConst;
 
@@ -12,6 +13,7 @@ const Gameboard = (() => {
     const getRowGameBoard = () => rowGameBoard;
 
     const checkResult = () => {
+        ++count;
         let bool = true;
 
         //check rows
@@ -48,6 +50,12 @@ const Gameboard = (() => {
             if (gameboard[rowGameBoard - i - 1][i] != firstElem) bool = false;
         }
         if (bool) return firstElem;
+
+        //check draw
+
+        if (count == 9) {
+            return 'draw';
+        }
 
         return 'next';
     }
