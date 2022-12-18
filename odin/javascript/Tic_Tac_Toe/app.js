@@ -33,6 +33,7 @@ const displayController = (() => {
             player[indexOtherPlayer].setMove(false);
             // alert('Stop! Winner - ' + player[indexPlayer].getName());
             messageMoveHTML.textContent = player[indexPlayer].getName() + ' won';
+            messageMoveHTML.style.color = 'red';
             return;
         }
         messageMove(indexOtherPlayer);
@@ -95,8 +96,8 @@ const displayController = (() => {
             startButton.style.display = 'block';
             startButton.focus();
             winnerHTML.style.display = 'block';
-            player1HTML.textContent = 'First player ' + player[0].getName() + ' ' + player[0].getElem();
-            player2HTML.textContent = 'Second player ' + player[1].getName()  + ' ' + player[1].getElem();
+            player1HTML.textContent = 'First player: ' + player[0].getName() + ' - ' + player[0].getElem();
+            player2HTML.textContent = 'Second player: ' + player[1].getName()  + ' - ' + player[1].getElem();
             return;
         }
     }
