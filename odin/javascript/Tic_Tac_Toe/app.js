@@ -31,7 +31,7 @@ const displayController = (() => {
         if (result != 'next') {
             player[indexPlayer].setMove(false);
             player[indexOtherPlayer].setMove(false);
-            alert('Stop! Winner - ' + player[indexPlayer].getName());
+            // alert('Stop! Winner - ' + player[indexPlayer].getName());
             messageMoveHTML.textContent = player[indexPlayer].getName() + ' won';
             return;
         }
@@ -48,7 +48,7 @@ const displayController = (() => {
                 elemGameBoard.addEventListener('click', () => {
                     if (elemGameBoard.textContent == '') {
                         for (let z = 0; z < 2; z++) {
-                            if (player[z].getMove()) {
+                            if (player[z].getMove() && !elemGameBoard.hasChildNodes()) {
                                 elemGameBoard.value = player[z].getElem();
                                 const elemImage = ElementImage(player[z].getElem());
                                 elemGameBoard.appendChild(elemImage.getElem());
