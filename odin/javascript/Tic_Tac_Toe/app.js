@@ -18,6 +18,9 @@ const displayController = (() => {
     const player1HTML = document.querySelector('.player1');
     const player2HTML = document.querySelector('.player2');
 
+    const buttonRestartHTML = document.getElementById('buttonRestart');
+    buttonRestartHTML.style.display = 'none';
+
     const messageMove = (index) => {
         messageMoveHTML.textContent = player[index].getName() + '\'s move';
     }
@@ -32,8 +35,14 @@ const displayController = (() => {
             player[indexPlayer].setMove(false);
             player[indexOtherPlayer].setMove(false);
             // alert('Stop! Winner - ' + player[indexPlayer].getName());
-            messageMoveHTML.textContent = player[indexPlayer].getName() + ' won';
+            if (result == 'draw') {
+                messageMoveHTML.textContent = 'Draw!';
+            }
+            else {
+                messageMoveHTML.textContent = player[indexPlayer].getName() + ' won!';
+            }
             messageMoveHTML.style.color = 'red';
+            buttonRestartHTML.style.display = 'block';
             return;
         }
         messageMove(indexOtherPlayer);
@@ -97,7 +106,7 @@ const displayController = (() => {
             startButton.focus();
             winnerHTML.style.display = 'block';
             player1HTML.textContent = 'First player: ' + player[0].getName() + ' - ' + player[0].getElem();
-            player2HTML.textContent = 'Second player: ' + player[1].getName()  + ' - ' + player[1].getElem();
+            player2HTML.textContent = 'Second player: ' + player[1].getName() + ' - ' + player[1].getElem();
             return;
         }
     }
