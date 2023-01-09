@@ -137,3 +137,16 @@
 .line10 {
     border: 1px solid var(--text-color-10);
 }
+
+.rectangleColor11 {
+    background-color: var(--back-color-11);
+    color: var(--text-color-11);
+}
+
+.rectangleBackground11 {
+    background-color: var(--back-color-11);
+}
+
+.line11 {
+    border: 1px solid var(--text-color-11);
+}
