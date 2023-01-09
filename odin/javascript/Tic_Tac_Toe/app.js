@@ -116,6 +116,13 @@ const displayController = (() => {
 
     startButton.addEventListener('click', start);
 
+    const newGame = () => {
+        location.reload();
+        return false;
+    }
+
+    buttonRestartHTML.addEventListener('click', newGame);
+
     return {
 
     }
