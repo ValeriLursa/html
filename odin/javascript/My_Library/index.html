@@ -156,7 +156,7 @@
         addBookButton.addEventListener('click', () => {
             event.preventDefault();
             //
-            console.log(panelInput);
+            // console.log(panelInput);
             if (validationForm(panelInput)) {
                 addBookToLibrary([panelInput.name.value, panelInput.author.value, panelInput.pages.value, panelInput.read.value]);
                 forEachMyLibrary();
