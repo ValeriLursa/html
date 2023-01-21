@@ -1,6 +1,6 @@
 import _ from 'lodash';
 import { h1_component, h2_component, img_component } from './main';
-import { menu_text, ul_component } from './menu';
+import { menu_text, menu_component } from './menu';
 import { contact_text } from './contact';
 
 //  function component() {
@@ -38,14 +38,14 @@ function check(name_navbar_elem) {
     clear_div_content();
 
     div_content.appendChild(h1_component());
-    div_content.appendChild(ul_component(menu_text, 'menu'));
+    div_content.appendChild(menu_component(menu_text, 'menu'));
   }
 
   if (name_navbar_elem === 'Contact') {
     clear_div_content();
     
     div_content.appendChild(h1_component());
-    div_content.appendChild(ul_component(contact_text, 'contact'))
+    // div_content.appendChild(ul_component(contact_text, 'contact'))
   }
 }
 
