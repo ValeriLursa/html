@@ -1,6 +1,6 @@
-function h1_component(){
+function h1_component(text){
     const element = document.createElement('h1');
-    element.textContent = 'Restaurant VaLurs';
+    element.textContent = text;
     return element;
 }
 

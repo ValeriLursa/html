@@ -1,7 +1,7 @@
 import _ from 'lodash';
 import { h1_component, h2_component, img_component } from './main';
 import { menu_text, menu_component } from './menu';
-import { contact_text } from './contact';
+import { contact_component } from './contact';
 
 //  function component() {
 //    const element = document.createElement('div');
@@ -29,7 +29,7 @@ function check(name_navbar_elem) {
   if (name_navbar_elem === 'Main') {
     clear_div_content();
 
-    div_content.appendChild(h1_component());
+    div_content.appendChild(h1_component('Restaurant VaLurs'));
     div_content.appendChild(h2_component());
     div_content.appendChild(img_component());
   }
@@ -37,15 +37,15 @@ function check(name_navbar_elem) {
   if (name_navbar_elem === 'Menu') {
     clear_div_content();
 
-    div_content.appendChild(h1_component());
+    div_content.appendChild(h1_component('Menu'));
     div_content.appendChild(menu_component(menu_text, 'menu'));
   }
 
   if (name_navbar_elem === 'Contact') {
     clear_div_content();
     
-    div_content.appendChild(h1_component());
-    // div_content.appendChild(ul_component(contact_text, 'contact'))
+    div_content.appendChild(h1_component('Contact'));
+    div_content.appendChild(contact_component());
   }
 }
 
