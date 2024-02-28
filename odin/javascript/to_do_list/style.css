@@ -1,0 +1,27 @@
+*{
+    --border: 1px solid black;
+}
+
+header{
+    border: var(--border);
+    height: 100px;
+}
+
+.main{
+    display: grid;
+    grid-template-columns: 20% calc(100% - 20% - 10px);
+    grid-template-rows: 100%;
+    column-gap: 10px;
+    border: var(--border);
+    height: 500px;
+    justify-content: space-between;
+}
+
+.main>div{
+    border: var(--border);
+}
+
+.menu{
+    display: flex;
+    flex-direction: column;
+}

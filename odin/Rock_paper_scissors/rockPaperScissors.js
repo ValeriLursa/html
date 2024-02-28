@@ -163,15 +163,15 @@ function selectImgComputerSelection(computerSelection){
     let src;
     switch (computerSelection){
         case 'rock':{
-            src = "./img/rock.png";
+            src = "./img/Rock_figma.png";
             break;
         }
         case 'paper':{
-            src="./img/paper.png";
+            src="./img/Paper_figma.png";
             break;
         }
         case 'scissors':{
-            src="./img/scissors.png"
+            src="./img/scissors_figma.png"
             break;
         }
     }
