@@ -39,4 +39,6 @@ h2 a {
 h2{
     font-size: 4rem;
     line-height: 4rem;
+
+    font-weight: 400;
 }
