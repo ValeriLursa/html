@@ -1,25 +1,5 @@
-@import url('https://fonts.googleapis.com/css2?family=Inknut+Antiqua:wght@300;400;500;600;700;800;900&display=swap');
-
-* {
-    padding: 0;
-    margin: 0;
-    box-sizing: border-box;
-    font-family: "Inknut Antiqua", serif;
-
-    --yellow: #F8A73F;
-    --orange: #DB5C01;
-    --grey: #99998F;
-    --black: #1B1612;
-}
-
-html {
-    font-size: 30px;
-    line-height: 30px;
-}
 
 h1 {
-    font-size: 6rem;
-    line-height: 6rem;
 
     color: var(--orange);
     width: fit-content;
@@ -35,98 +15,14 @@ h1 {
     animation-iteration-count: 1;
 }
 
-p,
-a {
-    font-size: 1rem;
-    line-height: 1rem;
-    text-decoration: none;
-}
-
-h2,
-h2 a {
-    font-size: 2rem;
-    line-height: 2rem;
-    margin-block-start: 0;
-    margin-block-end: 0;
-}
-
 nav {
-    width: 40%;
-    max-width: 489px;
-    height: 80vh;
-
-    display: flex;
-
-    position: fixed;
-    left: 0;
-    top: 50%;
-    transform: translate(0, -50%);
-    z-index: 100;
-
     animation-name: menu-animation;
     animation-duration: 8s;
     animation-iteration-count: 1;
     /* animation-delay: 8s; */
 }
 
-.left {
-    width: 40%;
-    height: 100%;
-    background-color: var(--yellow);
 
-    display: flex;
-    justify-content: center;
-    align-items: center;
-}
-
-.left a {
-    writing-mode: vertical-lr;
-    text-orientation: upright;
-    letter-spacing: -50px;
-    
-    color: var(--orange);
-}
-
-
-
-
-.right {
-    width: 60%;
-
-    text-align: center;
-    height: 100%;
-
-    display: none;
-}
-
-.left:hover~.right,
-.right:hover {
-
-
-    display: flex;
-    justify-content: center;
-    align-items: center;
-
-    background-color: var(--yellow);
-}
-
-.right ul {
-    list-style-type: none;
-    height: 200px;
-    display: flex;
-    flex-direction: column;
-    justify-content: space-between
-}
-
-.right ul a{
-    color: var(--grey);
-}
-
-.right ul a:hover{
-    color: var(--black);
-
-    transition: 0.s;
-}
 
 header{
     background-color: var(--black);
