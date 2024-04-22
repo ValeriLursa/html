@@ -1,0 +1,63 @@
+.page{
+    width: 100%;
+    padding-left: 16%;
+    padding-top: 120px;
+    padding-bottom: 120px;
+
+    text-align: center;
+
+    background-color: var(--black);
+}
+header{
+    width: 100%;
+}
+
+h2{
+    color: #FFF;
+}
+
+section{
+    width: 100%;
+    max-width: 840px;
+
+    margin: 75px auto;
+}
+
+h3{
+    font-weight: 400;
+    color: var(--beige);
+
+    margin-bottom: 50px;
+
+    text-align: center;
+}
+
+.food{
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-around;
+}
+
+.food h3{
+    width: 100%;
+}
+
+.food img{
+    width: 45%;
+}
+
+.phone{
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-around;
+}
+img{
+    width: 100%;
+}
+
+.shark{
+    width: 60%;
+}
+.new_year{
+    width: 30%;
+}
