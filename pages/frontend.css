@@ -1,0 +1,89 @@
+
+p{
+    line-height: 1.5rem;
+}
+
+h3{
+    line-height: 3rem;
+}
+
+section{
+    margin: 75px 0;
+}
+
+.works{
+    display: flex;
+    justify-content: space-evenly;
+    flex-wrap: wrap;
+    width: 100%;
+    max-width: 1236px;
+    
+}
+
+.works-card{
+    width: 478px;
+    height: 478px;
+
+    overflow: hidden;
+
+    margin-bottom: 100px;
+}
+
+.works-card-hover{
+    height: 478px;
+
+    background-color: var(--black);
+
+    position: relative;
+    top:100%;
+    transition: 1s;
+
+    padding-top: 46px;
+
+}
+
+.works-card:hover .works-card-hover{
+    top:0
+}
+
+.works-card-hover p{
+    margin-top: 12px;
+}
+
+.work-link{
+    position: absolute;
+    bottom: 38px;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    display: inline-block;
+    width: 100%;
+    color:var(--grey)
+}
+
+.works-card1{
+    background-image: url(../img/frontend/RPS.png);
+}
+
+.works-card2{
+    background-image: url(../img/frontend/EAS.png);
+}
+
+.works-card3{
+    background-image: url(../img/frontend/Calc.png);
+}
+
+.works-card4{
+    background-image: url(../img/frontend/form.png);
+}
+
+.works-card5{
+    background-image: url(../img/frontend/bord.png);
+}
+
+.works-card6{
+    background-image: url(../img/frontend/librari.png);
+}
+
+.works-card7{
+    background-image: url(../img/frontend/TTT.png);
+}
