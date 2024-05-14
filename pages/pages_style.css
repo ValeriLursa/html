@@ -25,7 +25,7 @@ h2{
 
 section{
     width: 100%;
-    max-width: 840px;
+    /* max-width: 840px; */
 
     margin: 75px auto;
 }
