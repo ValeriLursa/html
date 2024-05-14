@@ -1,0 +1,46 @@
+.skills-cards {
+    display: flex;
+    flex-wrap: wrap;
+    width: 100%;
+}
+
+.card {
+    display: flex;
+    justify-content: space-around;
+    flex-basis: 225px;
+    height: 258px;
+
+    background-color: var(--beige);
+    border-radius: 46px;
+    margin: 25px;
+
+    width: 30%;
+}
+
+.card1 {
+    flex-grow: 3;
+
+
+    /* width: 771px; */
+
+}
+
+.skills-cards div img {
+    width: 80%;
+
+
+}
+
+.card2,
+.card3,
+.card5
+.card6
+.card7
+.card8
+.card9
+ {
+    flex-grow: 1;
+}
+.card4{
+    flex-grow: 2;
+}
