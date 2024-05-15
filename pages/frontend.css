@@ -22,16 +22,18 @@ section{
 }
 
 .works-card{
-    width: 478px;
-    height: 478px;
+    width: 35vw;
+    height:35vw;
 
     overflow: hidden;
 
     margin-bottom: 100px;
+
+    background-size: contain;
 }
 
 .works-card-hover{
-    height: 478px;
+    height: 35vw;
 
     background-color: var(--black);
 
@@ -39,7 +41,7 @@ section{
     top:100%;
     transition: 1s;
 
-    padding-top: 46px;
+    padding-top: 3vw;
 
 }
 
@@ -48,7 +50,7 @@ section{
 }
 
 .works-card-hover p{
-    margin-top: 12px;
+    margin-top: 2vw;
 }
 
 .work-link{
@@ -87,4 +89,10 @@ section{
 
 .works-card7{
     background-image: url(../img/frontend/TTT.png);
+}
+
+@media (max-width: 1000px) {
+    h3{
+        margin: 0;
+    }
 }
