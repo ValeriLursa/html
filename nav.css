@@ -26,7 +26,7 @@ nav {
     writing-mode: vertical-lr;
     text-orientation: upright;
     letter-spacing: -50px;
-    
+
     color: var(--orange);
 }
 
@@ -61,12 +61,18 @@ nav {
     justify-content: space-between
 }
 
-.right ul a{
+.right ul a {
     color: var(--grey);
 }
 
-.right ul a:hover{
+.right ul a:hover {
     color: var(--black);
 
     transition: 0.s;
+}
+
+@media (max-width: 1000px) {
+    nav {
+        max-width: 189px;
+    }
 }
