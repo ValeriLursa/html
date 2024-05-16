@@ -44,3 +44,12 @@
 .card4{
     flex-grow: 2;
 }
+
+.about_me-information p{
+    font-family: "Involve";
+    font-weight: 400;
+}
+
+.about_me-h2, .about_me-skills h3{
+    font-family: "Involve";
+}
