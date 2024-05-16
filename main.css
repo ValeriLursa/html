@@ -1,9 +1,11 @@
 @import url('https://fonts.googleapis.com/css2?family=Inknut+Antiqua:wght@300;400;500;600;700;800;900&display=swap');
-@font-face{
+
+@font-face {
     font-family: "Involve";
     font-weight: 400;
     src: url(fonts/Involve-Regular.ttf) format("truetype");
 }
+
 * {
     padding: 0;
     margin: 0;
@@ -22,17 +24,18 @@ html {
     line-height: 25px;
 }
 
-body{
+body {
     min-height: 100vh;
 }
 
-h1{
+h1 {
     font-size: 6rem;
     line-height: 6rem;
 }
 
 p,
-a {
+a,
+li {
     font-size: 1rem;
     line-height: 1rem;
     text-decoration: none;
@@ -46,19 +49,19 @@ h2 a {
     margin-block-end: 0;
 }
 
-h2{
+h2 {
     font-size: 3rem;
     line-height: 3rem;
 
     font-weight: 400;
 }
 
-header h2:first-of-type{
+header h2:first-of-type {
     font-family: "Involve";
 }
 
 @media (max-width: 1000px) {
-    html{
+    html {
         font-size: 16px;
     }
 }
