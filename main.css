@@ -1,5 +1,9 @@
 @import url('https://fonts.googleapis.com/css2?family=Inknut+Antiqua:wght@300;400;500;600;700;800;900&display=swap');
-
+@font-face{
+    font-family: "Involve";
+    font-weight: 400;
+    src: url(fonts/Involve-Regular.ttf) format("truetype");
+}
 * {
     padding: 0;
     margin: 0;
@@ -43,10 +47,14 @@ h2 a {
 }
 
 h2{
-    font-size: 4rem;
-    line-height: 4rem;
+    font-size: 3rem;
+    line-height: 3rem;
 
     font-weight: 400;
+}
+
+header h2:first-of-type{
+    font-family: "Involve";
 }
 
 @media (max-width: 1000px) {
