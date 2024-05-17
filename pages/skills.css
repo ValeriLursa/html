@@ -33,23 +33,78 @@
 
 .card2,
 .card3,
-.card5
-.card6
-.card7
-.card8
-.card9
- {
+.card5 .card6 .card7 .card8 .card9 {
     flex-grow: 1;
 }
-.card4{
+
+.card4 {
     flex-grow: 2;
 }
 
-.about_me-information p{
+.about_me-information p {
     font-family: "Involve";
     font-weight: 400;
 }
 
-.about_me-h2, .about_me-skills h3{
+.about_me-h2,
+.about_me-skills h3,
+.about_me-experience h3 {
     font-family: "Involve";
+}
+
+/* experience */
+h4 {
+    color: var(--yellow);
+    margin-bottom: 15px;
+    font-family: "Involve";
+
+}
+
+.about_me-experience {
+    text-align: left;
+    width: 100%;
+    min-width: 650px;
+    max-width: 1100px;
+    margin: auto;
+}
+
+.about_me-experience-card {
+    margin-bottom: 50px;
+    position: relative;
+
+}
+
+.experience-card1::before{
+    content: "2020";
+    position: relative;
+    top: 0;
+    left: -100px;
+}
+
+.about_me-experience-card p {
+    font-family: "Involve";
+}
+
+.about_me-experience ul {
+    color: var(--beige);
+    list-style-type: disc;
+}
+
+.about_me-experience-card p:last-of-type{
+    color: var(--beige);
+}
+
+.experience-card-lessons {
+    padding-left: 100px;
+    margin-top: 1rem;
+}
+
+.experience-card-lessons li{
+    margin-bottom: 1rem;
+}
+
+.about_me-experience-card p:first-of-type {
+    color: var(--orange);
+    margin-bottom: 15px;
+
 }
