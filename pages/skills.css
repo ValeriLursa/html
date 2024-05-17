@@ -47,8 +47,7 @@
 }
 
 .about_me-h2,
-.about_me-skills h3,
-.about_me-experience h3 {
+h3 {
     font-family: "Involve";
 }
 
@@ -62,10 +61,11 @@ h4 {
 
 .about_me-experience {
     text-align: left;
-    padding-left: 200px;
+    /* padding-left: 200px; */
     /* width: 100%; */
     /* min-width: 650px; */
     /* max-width: 800px; */
+    margin-bottom: 150px;
 }
 
 .about_me-experience-card {
@@ -108,6 +108,7 @@ h4 {
 .about_me-experience ul {
     color: var(--beige);
     list-style-type: disc;
+    padding-left: 200px;
 }
 
 .about_me-experience-card p:last-of-type {
@@ -128,6 +129,43 @@ h4 {
     margin-bottom: 15px;
 
 }
+
+/* contacts */
+.about_me-contacts-div {
+    background-color: var(--beige);
+    max-width: 1000px;
+    height: 212px;
+    margin: 0 auto 150px auto;
+    display: flex;
+    flex-wrap: wrap;
+    align-content: space-around;
+    justify-content: space-around;
+    padding: 24px 57px;
+}
+
+.contact {
+    background-color: var(--black);
+    color: var(--orange);
+    border-radius: 20px;
+    padding: 17px 28px;
+    width: fit-content;
+    flex-grow: 1;
+    max-width: 417px;
+}
+
+.contact:lang(ru) {
+    font-family: "Involve";
+}
+
+.about_me-social_media{
+    width: 382px;
+    height: 94px;
+    display: flex;
+    justify-content: space-between;
+    margin: auto;
+}
+
+
 
 @media (max-width:1000px) {
     .about_me-experience-card::before {
