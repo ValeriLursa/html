@@ -91,6 +91,16 @@ section{
     background-image: url(../img/frontend/TTT.png);
 }
 
+.works-card-hover a:last-of-type:hover{
+    transition: 300ms;
+    color: var(--orange);
+}
+
+.works-card-hover>a:hover>h3{
+    transition: 300ms;
+    text-decoration: underline;
+} 
+
 @media (max-width: 1000px) {
     h3{
         margin: 0;
