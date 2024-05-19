@@ -22,6 +22,8 @@ nav {
     align-items: center;
 
     opacity: 0.5;
+
+    transition: 1s;
 }
 
 .left a {
@@ -48,7 +50,6 @@ nav {
 
 .left:hover~.right,
 .right:hover {
-
 
     display: flex;
     justify-content: center;
